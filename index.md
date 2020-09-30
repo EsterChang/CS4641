@@ -12,7 +12,7 @@ Requirements:
 ▪ References (list containing at least three references, preferably peer-reviewed)
 
 ### Summary Figure
-![Summary Figure](https://github.com/EsterChang/CS4641/blob/gh-pages/Project%20Proposal%20Slide.png)
+![Summary Figure](https://user-images.githubusercontent.com/41976165/94748881-63b4ea80-0350-11eb-8ac1-789a9b24df41.png)
 
 ### Introduction/Background
 
