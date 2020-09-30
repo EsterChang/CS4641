@@ -1,4 +1,6 @@
-### Problem Statement
+(Need to add) Summary figure (one infographic prepared by your team that summarizes your project goal)
+
+### Introduction/Background
 
 Health care accessibility and affordability has been at the forefront of issues that
 Americans face on a daily basis. Health care costs often prevent people from seeking
@@ -8,13 +10,11 @@ serious medical condition. We hope to determine which factors play a bigger role
 determining the final cost of insurance to provide patients with ways they can reduce
 their overall costs by making changes to factors they can control.
 
-### Dataset
+### Methods
 
 Our data set comes from Kaggle and contains a mix of text and numerical data. It
 includes features for age, sex, BMI, number of children, smoking, region in the US, and
 medical costs.
-
-### Our Approach
 
 We have found that the most common approach to predicting insurance cost is linear
 regression. Some researchers have found that certain statistical methods such as linear
@@ -26,23 +26,11 @@ Before attempting to predict insurance cost, we will first use the K-means metho
 identify any unknown groups within our data set. After completing this task, our
 approach to this problem will be to train each of our supervised models using the total
 data set, then only high cost data, and finally only low-to-medium cost data. Since linear
-regression is so popular, we will be comparing this method to Random Forest, XGBoost,
-
-and ANN. We believe this approach will be successful since it is likely that certain
+regression is so popular, we will be comparing this method to Random Forest, XGBoost, and ANN. 
+We believe this approach will be successful since it is likely that certain
 models will result in better performance for high cost and others for low-to-medium cost.
 If this is not the case, we still believe that at least one of our 3 chosen models will have
 better performance than linear regression for the total data set.
-
-
-### Why It Matters
-
-If we are able to predict medical insurance cost, the government and people can decide
-on what actions to take or policies to implement to help reduce medical insurance costs
-and increase coverage. It will also aim at finding out what factors medical insurance
-companies place most importance on when determining insurance costs, which will allow
-people to reduce costs based on what factors they can control.
-
-### Examination of Success
 
 In order to evaluate how successful our algorithm is, we’ll probably want to take a look at
 a few different evaluation metrics before deciding on one. Because different metrics can
@@ -52,3 +40,17 @@ want to be wary of metrics that could over exaggerate our performance or make ou
 algorithm’s performance out to be more optimistic than it really is. For now, we believe
 that we’ll want to pay attention to our f-measure as this value will take into account both
 precision and recall.
+
+### Results
+
+### Discussion
+
+If we are able to predict medical insurance cost, the government and people can decide
+on what actions to take or policies to implement to help reduce medical insurance costs
+and increase coverage. It will also aim at finding out what factors medical insurance
+companies place most importance on when determining insurance costs, which will allow
+people to reduce costs based on what factors they can control.
+
+### References
+
+
