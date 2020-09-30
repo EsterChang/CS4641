@@ -1,4 +1,17 @@
-(Need to add) Summary figure (one infographic prepared by your team that summarizes your project goal)
+Requirements:
+▪ Summary figure (one infographic prepared by your team that summarizes your project goal)
+
+▪ Introduction/Background (Proposed): I would add a subheading about the dataset (the format, what each sample represents, your ground truth)
+
+▪ Methods: is this a classification (binary/multiclass) or regression? Mention the data preprocessing and dataset combining techniques, unsupervised and supervised algorithms, and the evaluation metric you plan on using 
+
+▪ Results (what results are you trying to achieve? ): mention what you expect from the unsupervised and supervised algorithms, what is the outcome for each touchpoint (eg. 90% accuracy to classify CVD patients)
+
+▪ Discussion (best outcome, what it would mean, what is next.)
+
+▪ References (list containing at least three references, preferably peer-reviewed)
+
+### Summary Figure
 
 ### Introduction/Background
 
@@ -9,12 +22,13 @@ especially those that are in lower-income households, do not have insurance, or 
 serious medical condition. We hope to determine which factors play a bigger role in
 determining the final cost of insurance to provide patients with ways they can reduce
 their overall costs by making changes to factors they can control.
-
-### Methods
-
+#### Dataset
 Our data set comes from Kaggle and contains a mix of text and numerical data. It
 includes features for age, sex, BMI, number of children, smoking, region in the US, and
 medical costs.
+
+
+### Methods
 
 We have found that the most common approach to predicting insurance cost is linear
 regression. Some researchers have found that certain statistical methods such as linear
