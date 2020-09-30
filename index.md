@@ -1,8 +1,12 @@
-## Welcome to GitHub Pages
+### Problem Statement
 
-You can use the [editor on GitHub](https://github.com/EsterChang/CS4641/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Health care accessibility and affordability has been at the forefront of issues that
+Americans face on a daily basis. Health care costs often prevent people from seeking
+proper treatment, and medical bills can be a major financial burden on U.S. families,
+especially those that are in lower-income households, do not have insurance, or have a
+serious medical condition. We hope to determine which factors play a bigger role in
+determining the final cost of insurance to provide patients with ways they can reduce
+their overall costs by making changes to factors they can control.
 
 ### Markdown
 
