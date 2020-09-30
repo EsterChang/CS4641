@@ -8,34 +8,47 @@ serious medical condition. We hope to determine which factors play a bigger role
 determining the final cost of insurance to provide patients with ways they can reduce
 their overall costs by making changes to factors they can control.
 
-### Markdown
+### Dataset
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Our data set comes from Kaggle and contains a mix of text and numerical data. It
+includes features for age, sex, BMI, number of children, smoking, region in the US, and
+medical costs.
 
-```markdown
-Syntax highlighted code block
+### Our Approach
 
-# Header 1
-## Header 2
-### Header 3
+We have found that the most common approach to predicting insurance cost is linear
+regression. Some researchers have found that certain statistical methods such as linear
+regression cause skewed distributions and spikes at zero in small to medium sample
+sizes. In addition to this, it has been suggested that some model performances could be
+improved by training high cost and low-to-medium cost data separately.
 
-- Bulleted
-- List
+Before attempting to predict insurance cost, we will first use the K-means method to
+identify any unknown groups within our data set. After completing this task, our
+approach to this problem will be to train each of our supervised models using the total
+data set, then only high cost data, and finally only low-to-medium cost data. Since linear
+regression is so popular, we will be comparing this method to Random Forest, XGBoost,
 
-1. Numbered
-2. List
+and ANN. We believe this approach will be successful since it is likely that certain
+models will result in better performance for high cost and others for low-to-medium cost.
+If this is not the case, we still believe that at least one of our 3 chosen models will have
+better performance than linear regression for the total data set.
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
+### Why It Matters
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+If we are able to predict medical insurance cost, the government and people can decide
+on what actions to take or policies to implement to help reduce medical insurance costs
+and increase coverage. It will also aim at finding out what factors medical insurance
+companies place most importance on when determining insurance costs, which will allow
+people to reduce costs based on what factors they can control.
 
-### Jekyll Themes
+### Examination of Success
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/EsterChang/CS4641/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+In order to evaluate how successful our algorithm is, we’ll probably want to take a look at
+a few different evaluation metrics before deciding on one. Because different metrics can
+tell different stories with regards to how well our model performs, it’s important to explore
+different evaluation metrics to decide which best represents our algorithm. We definitely
+want to be wary of metrics that could over exaggerate our performance or make our
+algorithm’s performance out to be more optimistic than it really is. For now, we believe
+that we’ll want to pay attention to our f-measure as this value will take into account both
+precision and recall.
