@@ -24,9 +24,14 @@ serious medical condition. We hope to determine which factors play a bigger role
 determining the final cost of insurance to provide patients with ways they can reduce
 their overall costs by making changes to factors they can control.
 #### Dataset
-Our data set comes from Kaggle and contains a mix of text and numerical data. It
-includes features for age, sex, BMI, number of children, smoking, region in the US, and
-medical costs.
+Our [data set](https://www.kaggle.com/mirichoi0218/insurance) is a CSV file from Kaggle with 1338 rows and contains a mix of text and numerical data. Specifically, it includes the following features:
+- Age (integer)
+- Sex (male/female)
+- BMI (decimal)
+- Number of children (integer)
+- Smoker (yes/no)
+- Region in the US (southeast/soutwest/northeast/northwest)
+- Charges (decimal)
 
 
 ### Methods
