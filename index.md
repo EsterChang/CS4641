@@ -65,11 +65,13 @@ precision and recall.
 
 ### Discussion
 
-If we are able to predict medical insurance cost, the government and people can decide
-on what actions to take or policies to implement to help reduce medical insurance costs
-and increase coverage. It will also aim at finding out what factors medical insurance
-companies place most importance on when determining insurance costs, which will allow
-people to reduce costs based on what factors they can control.
+The best outcome would be predicting medical insurance accurately each time by inputting their 
+features. It would mean that medical insurance buyers would be able to predict their medical 
+insurance and how the cost would increase or decrease for them as factors influencing insurance 
+changes (i.e. age). Predicting insurance cost will allow the government and people decide what 
+actions to take or policies to implement to help reduce medical insurance cost and increase 
+coverage and how much to budget for medical insurance. The next step, or future research, 
+involves predicting how medical insurance changes over time. 
 
 ### References
 
