@@ -62,6 +62,7 @@ that we’ll want to pay attention to our f-measure as this value will take into
 precision and recall.
 
 ### Results
+For our unsupervised portion, from running K-means on our dataset, we’re anticipating seeing some relationships between our features appear that could tell us more information about our data. We plan to have this portion done by touch-point 2 where we’ll go into more detail about how we cleaned our data, clustered our data and the results we found. By touch-point 3, we will have made headway with our supervised portion of the assignment. After training our supervised models with low-to-medium cost, high cost, and the combined set, we believe that Random Forest, XGBoost, or ANN to perform better than Linear Regression. We’re anticipating that one of the following will perform the best with an accuracy of greater than 90%.
 
 ### Discussion
 
