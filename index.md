@@ -11,15 +11,14 @@ predictions of health insurance costs so that U.S. families are able to choose t
 insurance and make informed financial decisions.
 
 #### Dataset
-Our [data set](https://www.kaggle.com/mirichoi0218/insurance) is a CSV file from Kaggle with 1338 rows and contains a mix of text and numerical data. Specifically, it includes the following features:
-- Age (integer)
-- Sex (male/female)
-- BMI (decimal)
-- Number of children (integer)
-- Smoker (yes/no)
-- Region in the US (southeast/soutwest/northeast/northwest)
-- Charges (decimal)
-
+Our [dataset](https://www.kaggle.com/mirichoi0218/insurance) originates from Kaggle and contains a mix of text and numerical data. The features include:
+- Age: integer
+- Sex: male or female
+- BMI: decimal
+- Number of children: integer
+- Smoker: yes or no
+- Region in the US: southeast, southwest, northeast, or northwest
+- Charges: decimal
 
 ### Methods
 
