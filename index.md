@@ -42,7 +42,7 @@ coverage and how much to budget for medical insurance. The next step, or future 
 involves predicting how medical insurance changes over time. 
 
 ### References
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5977561/
-https://people.csail.mit.edu/gjw/papers/healthcare.pdf
-https://bmchealthservres.biomedcentral.com/articles/10.1186/s12913-019-4616-x
+- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5977561/
+- https://people.csail.mit.edu/gjw/papers/healthcare.pdf
+- https://bmchealthservres.biomedcentral.com/articles/10.1186/s12913-019-4616-x
 
