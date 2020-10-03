@@ -1,18 +1,6 @@
 Requirements:
-▪ Summary figure (one infographic prepared by your team that summarizes your project goal)
-
-▪ Introduction/Background (Proposed): I would add a subheading about the dataset (the format, what each sample represents, your ground truth)
-
-▪ Methods: is this a classification (binary/multiclass) or regression? Mention the data preprocessing and dataset combining techniques, unsupervised and supervised algorithms, and the evaluation metric you plan on using 
-
-▪ Results (what results are you trying to achieve? ): mention what you expect from the unsupervised and supervised algorithms, what is the outcome for each touchpoint (eg. 90% accuracy to classify CVD patients)
-
-▪ Discussion (best outcome, what it would mean, what is next.)
-
-▪ References (list containing at least three references, preferably peer-reviewed)
-
 ### Summary Figure
-![Summary Figure](https://user-images.githubusercontent.com/41976165/94748881-63b4ea80-0350-11eb-8ac1-789a9b24df41.png)
+![Summary Figure](https://user-images.githubusercontent.com/41976165/94978740-c2af6680-04ec-11eb-8e63-b98fcdf3384b.png)
 
 ### Introduction/Background
 
@@ -20,9 +8,9 @@ Health care accessibility and affordability has been at the forefront of issues 
 Americans face on a daily basis. Health care costs often prevent people from seeking
 proper treatment, and medical bills can be a major financial burden on U.S. families,
 especially those that are in lower-income households, do not have insurance, or have a
-serious medical condition. We hope to determine which factors play a bigger role in
-determining the final cost of insurance to provide patients with ways they can reduce
-their overall costs by making changes to factors they can control.
+serious medical condition. Our goal is to develop a model that can predict the cost of
+insurance by inputting different features that can affect insurance cost.
+
 #### Dataset
 Our [data set](https://www.kaggle.com/mirichoi0218/insurance) is a CSV file from Kaggle with 1338 rows and contains a mix of text and numerical data. Specifically, it includes the following features:
 - Age (integer)
