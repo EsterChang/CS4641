@@ -2,12 +2,13 @@
 
 ### Introduction/Background
 
-Health care accessibility and affordability has been at the forefront of issues that
-Americans face on a daily basis. Health care costs often prevent people from seeking
+The United States has seen an unsustainable increase in the cost of health care in recent
+decades. The accessibility and affordability of health care has been at the forefront of issues that
+Americans face on a daily basis. High costs often prevents people from seeking
 proper treatment, and medical bills can be a major financial burden on U.S. families,
-especially those that are in lower-income households, do not have insurance, or have a
-serious medical condition. Our goal is to develop a model that can predict the cost of
-insurance by inputting different features that can affect insurance cost.
+especially those that are in lower-income households. Our goal is to offer accurate
+predictions of health insurance costs so that U.S. families are able to choose the right
+insurance and make informed financial decisions.
 
 #### Dataset
 Our [data set](https://www.kaggle.com/mirichoi0218/insurance) is a CSV file from Kaggle with 1338 rows and contains a mix of text and numerical data. Specifically, it includes the following features:
