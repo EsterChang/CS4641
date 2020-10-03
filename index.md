@@ -37,7 +37,9 @@ For our unsupervised portion, we expect to discover relationships within the dat
 The best outcome would be predicting medical insurance accurately each time by inputting their features. It would mean that medical insurance buyers would be able to predict their medical insurance and how the cost would increase or decrease for them as factors influencing insurance changes (i.e. age). Predicting insurance cost will allow the government and people decide what actions to take to help reduce medical insurance cost, increase coverage, and know how much to budget for medical insurance. A potential next step would be predicting how medical insurance changes over time. 
 
 ### References
-- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5977561/
-- https://people.csail.mit.edu/gjw/papers/healthcare.pdf
-- https://bmchealthservres.biomedcentral.com/articles/10.1186/s12913-019-4616-x
+Bertsimas, D., Bjarnadóttir, M. V., Kane, M. A., Kryder, J. C., Pandey, R., Vempala, S., &amp; Wang, G. (2008). Algorithmic Prediction of Health-Care Costs. Operations Research, 56(6), 1382-1392. doi:10.1287/opre.1080.0619
+
+Jödicke, A. M., Zellweger, U., Tomka, I. T., Neuer, T., Curkovic, I., Roos, M., . . . Egbring, M. (2019). Prediction of health care expenditure increase: How does pharmacotherapy contribute? BMC Health Services Research, 19(1). doi:10.1186/s12913-019-4616-x
+
+Morid, M., Kawamoto, K., Ault, T., Dorius, J., &amp; Abdelrahman, S. (2018, April 16). Supervised Learning Methods for Predicting Healthcare Costs: Systematic Literature Review and Empirical Evaluation. Retrieved October 03, 2020, from https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5977561/
 
