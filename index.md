@@ -1,4 +1,3 @@
-Requirements:
 ### Summary Figure
 ![Summary Figure](https://user-images.githubusercontent.com/41976165/94978740-c2af6680-04ec-11eb-8e63-b98fcdf3384b.png)
 
