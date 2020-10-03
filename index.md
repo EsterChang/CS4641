@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/41976165/94978740-c2af6680-04ec-11eb-8e63-b98fcdf3384b.png" alt="drawing" width="400"/>
+<img src="https://user-images.githubusercontent.com/41976165/94980506-6d795200-04f8-11eb-885b-65e707be2036.png" alt="drawing" width="400"/>
 
 ### Introduction/Background
 
