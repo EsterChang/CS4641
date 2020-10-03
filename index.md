@@ -18,7 +18,7 @@ Our [dataset](https://www.kaggle.com/mirichoi0218/insurance) originates from Kag
 - Number of children: integer
 - Smoker: yes or no
 - Region in the US: southeast, southwest, northeast, or northwest
-- Charges: decimal
+- Charges: decimal (ground truth)
 
 ### Methods
 
@@ -33,12 +33,11 @@ For our unsupervised portion, we expect to discover relationships within the dat
 
 ### Discussion
 
-The best outcome would be predicting medical insurance accurately each time by inputting their features. It would mean that medical insurance buyers would be able to predict their medical insurance and how the cost would increase or decrease for them as factors influencing insurance changes (i.e. age). Predicting insurance cost will allow the government and people decide what actions to take to help reduce medical insurance cost, increase coverage, and know how much to budget for medical insurance. A potential next step would be predicting how medical insurance changes over time. 
+The best outcome would be being able to predict anyone's health insurance given specific features with high accuracy. This outcome would mean that patients could choose the correct insurance for them, and it would allow insurance companies to better allocate their resources and plan their business model. Predicting insurance cost with high accuracy would also allow the government and its citizens to decide on correct policies to help reduce cost and increase coverage. A potential next step would be predicting an individual's insurance cost over time.
 
 ### References
 Bertsimas, D., Bjarnadóttir, M. V., Kane, M. A., Kryder, J. C., Pandey, R., Vempala, S., &amp; Wang, G. (2008). Algorithmic Prediction of Health-Care Costs. Operations Research, 56(6), 1382-1392. doi:10.1287/opre.1080.0619
 
 Jödicke, A. M., Zellweger, U., Tomka, I. T., Neuer, T., Curkovic, I., Roos, M., . . . Egbring, M. (2019). Prediction of health care expenditure increase: How does pharmacotherapy contribute? BMC Health Services Research, 19(1). doi:10.1186/s12913-019-4616-x
 
-Morid, M., Kawamoto, K., Ault, T., Dorius, J., &amp; Abdelrahman, S. (2018, April 16). Supervised Learning Methods for Predicting Healthcare Costs: Systematic Literature Review and Empirical Evaluation. Retrieved October 03, 2020, from https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5977561/
-
+Morid, M., Kawamoto, K., Ault, T., Dorius, J., &amp; Abdelrahman, S. (2018, April 16). Supervised Learning Methods for Predicting Healthcare Costs: Systematic Literature Review and Empirical Evaluation.
