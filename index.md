@@ -36,30 +36,11 @@ Our [data set](https://www.kaggle.com/mirichoi0218/insurance) is a CSV file from
 
 ### Methods
 
-We have found that the most common approach to predicting insurance cost is linear
-regression. Some researchers have found that certain statistical methods such as linear
-regression cause skewed distributions and spikes at zero in small to medium sample
-sizes. In addition to this, it has been suggested that some model performances could be
-improved by training high cost and low-to-medium cost data separately.
+Before clustering our data and using it to make predictions, we will ensure that the data is clean and usable by removing any rows with invalid values and one-hot encoding certain features like sex to make them easier to work with.  After our data is clean and usable, we will construct a correlation matrix to analyze the correlation between the features, and then further explore the relationship between features that are highly correlated.
 
-Before attempting to predict insurance cost, we will first use the K-means method to
-identify any unknown groups within our data set. After completing this task, our
-approach to this problem will be to train each of our supervised models using the total
-data set, then only high cost data, and finally only low-to-medium cost data. Since linear
-regression is so popular, we will be comparing this method to Random Forest, XGBoost, and ANN. 
-We believe this approach will be successful since it is likely that certain
-models will result in better performance for high cost and others for low-to-medium cost.
-If this is not the case, we still believe that at least one of our 3 chosen models will have
-better performance than linear regression for the total data set.
+For the unsupervised learning portion of our project, we will be using K-means clustering to identify any unknown or unclear groups within our dataset.  To ensure that we choose the correct number of clusters to best represent the data, we will make use of the elbow method along with a silhouette analysis.  By clustering the data, we hope to find feature relationships that were not apparent during our statistical analysis of the dataset.
 
-In order to evaluate how successful our algorithm is, we’ll probably want to take a look at
-a few different evaluation metrics before deciding on one. Because different metrics can
-tell different stories with regards to how well our model performs, it’s important to explore
-different evaluation metrics to decide which best represents our algorithm. We definitely
-want to be wary of metrics that could over exaggerate our performance or make our
-algorithm’s performance out to be more optimistic than it really is. For now, we believe
-that we’ll want to pay attention to our f-measure as this value will take into account both
-precision and recall.
+For the supervised learning portion of our project, we will be attempting to obtain better performance than Linear Regression when predicting insurance costs since it is the most common approach.  The models we have chosen to utilize are Random Forest, XGBoost, and ANN.  While we believe that our chosen models will lead to better performance than Linear Regression for the total dataset, we will also be training our models with low-to-medium and high cost data separately.  The reason for this is we would like to see if we are able to make better predictions for specifically low-to-medium cost and specifically high cost insurance.  To compare the performance of our models, we will be using the mean squared error metric to evaluate each individually.
 
 ### Results
 For our unsupervised portion, from running K-means on our dataset, we’re anticipating seeing some relationships between our features appear that could tell us more information about our data. We plan to have this portion done by touch-point 2 where we’ll go into more detail about how we cleaned our data, clustered our data and the results we found. By touch-point 3, we will have made headway with our supervised portion of the assignment. After training our supervised models with low-to-medium cost, high cost, and the combined set, we believe that Random Forest, XGBoost, or ANN to perform better than Linear Regression. We’re anticipating that one of the following will perform the best with an accuracy of greater than 90%.
