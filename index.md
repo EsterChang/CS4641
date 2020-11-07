@@ -37,6 +37,18 @@ Before working with our dataset, we wanted to ensure that it was thoroughly clea
 
 In addition to these actions, we also performed a one-hot encoding on the data, converting features such as smoker from "yes" and "no" to 1 and 0.  One of our features, region, was encoded in two different ways for use in different parts of our project.  First, each of our four regions were encoded as 0, 1, 2, 3, and this encoding was used for our data exploration, such as in the correlation matrix.  However, this encoding would present a problem in our unsupervised learning, since when measuring the euclidean distance, the regions encoded as 0 and 3 would be seen as further apart than 0 and 1, even though there is no true meaning for this increased distance between the regions.  Therefore, our second encoding consisted of splitting region into four separate features, one for each region, so that no pair of regions would be seen as further apart than another.
 
+### Data Exploration
+
+<img width="489" alt="correlation" src="https://user-images.githubusercontent.com/46691358/98428361-1cb4c600-206f-11eb-9f7e-45fc9045d0b9.png">
+
+<img width="535" alt="smoker" src="https://user-images.githubusercontent.com/46691358/98428471-95b41d80-206f-11eb-90fc-42a77309eefb.png">
+
+<img width="535" alt="bmi-scatter" src="https://user-images.githubusercontent.com/46691358/98428482-aebcce80-206f-11eb-9875-b633e7ef5a92.png">
+
+<img width="531" alt="bmi-violin" src="https://user-images.githubusercontent.com/46691358/98428490-bda38100-206f-11eb-901e-900253b2da28.png">
+
+<img width="533" alt="age" src="https://user-images.githubusercontent.com/46691358/98428500-cd22ca00-206f-11eb-8a4f-74607d822914.png">
+
 ### Results
 For our unsupervised portion, we expect to discover relationships within the dataset that were not clear from our initial statistical analysis.  From these new relationships we hope to gain a deeper understanding of our data so that we can make better predictions during the supervised portion. For touchpoint 2, we are trying to achieve a silhouette coefficient >0.5 and 90% clustering accuracy using K-means. For the supervised portion, we expect to see an improvement in performance over Linear Regression when utilizing Random Forest, XGBoost, and ANN methods. By touchpoint 3, we are aiming to obtain a lower MSE value from Random Forest, XGBoost, or ANN than Linear Regression on either the combined or separated dataset. Overall, we want to be able to predict the insurance cost of anyone, given their specific features, with an accuracy >90%.
 
