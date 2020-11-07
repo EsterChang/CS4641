@@ -78,11 +78,11 @@ Another method that we attempted to use was KPrototype clustering. Since we have
 
 #### Cluster Analysis
 
-Even though we could not achieve great clustering on our dataset, we were still able to gain further insight into the importance of our features by using 15 clusters.  When observing the distribution of charges within each cluster, it is clear that some clusters have lower charges on average, while others have higher charges.
+Even though we could not achieve great clustering on our dataset, we were still able to gain further insight into the importance of our features by using 15 clusters.  When observing the distribution of charges within each cluster, it is clear that some clusters have lower charges on average, while others have higher charges. The average charges of Clusters 0-7 were around $8,000 ± $6,000, and the average charges of Clusters 8-14 were around $30,000 ± $11,000. 
 
 <img width="507" alt="Screen Shot 2020-11-06 at 11 10 25 PM" src="https://user-images.githubusercontent.com/32435018/98432345-4c71c700-208b-11eb-9b31-0477f329d17b.png">
 
-When these same clusters are shown in terms of smoker status, the influence of smoking is again very apparent. Recall that a value of 1 indicates a smoker and 0 a non-smoker. It can be seen that the clusters with high charges contain exclusively smokers, while the clusters with low charges contain exclusively non-smokers. This is a remarkable result, and again shows us that smoking status should be weighted much more than any other feature.
+When these same clusters are shown in terms of smoker status, the influence of smoking is again very apparent. Recall that a value of 1 indicates a smoker and 0 a non-smoker. It can be seen that the clusters with high charges contain exclusively smokers, while the clusters with low charges contain exclusively non-smokers. Similar to the charges, there were two main divisions in the 15 clusters for the smoker feature. Clusters 0-7 had exclusively non-smokers, and clusters 8-14 had exclusively smokers, delineated by 0 standard deviation. This is a remarkable result, and again shows us that smoking status should be weighted much more than any other feature.
 
 A surprising finding was that the majority of clusters were strictly male or female. Cluster 9 is the only cluster with both males and females, with a slightly larger number of males. Another thing we found was that each cluster belongs to a specific region, and there are no clusters with patients from multiple regions. We will be double-checking the impact of sex and region on charges before moving on to supervised learning.
 
