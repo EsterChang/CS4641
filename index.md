@@ -78,7 +78,17 @@ The silhouette method allowed us to clearly see what would be the optimal number
 
 <img width="300" alt="kmeans-sil" src="https://user-images.githubusercontent.com/46691358/98430682-496fda00-207d-11eb-8e8a-384eaa24f6ba.png">
 
-We implemented the KMeans method from sciki, assigning the number of clusters to 15. To get the same clustering results each time, we made the randomness of the initialization deterministic by defining the parameter random_state as 20. After running the KMeans algorithm, we decided to plot each cluster’s mean and standard deviation against each of the features to get a better understanding of how our data points were being clustered.
+We implemented the KMeans method from sklearn, assigning the number of clusters to 15. To get the same clustering results each time, we made the randomness of the initialization deterministic by defining the parameter random_state as 20. After running the KMeans algorithm, we decided to plot each cluster’s mean and standard deviation against each of the features to get a better understanding of how our data points were being clustered.
+
+Figure 1a showed the clusters being plotted against the charges. There were 2 main divisions within the charges for the 15 clusters, with about half of the clusters having a lower average charge and the other half having a higher average charge. The average charges of Clusters 0-7 were around $8,000 ± $6,000, and the average charges of Clusters 8-14 were around $30,000 ± $11,000. Figure 1b showed the clusters plotted against the smoker feature. Similar to the charges, there were two main divisions in the 15 clusters for the smoker feature. Clusters 0-7 had exclusively non-smokers, and clusters 8-14 had exclusively smokers, delineated by 0 standard deviation. The division was the exact same as the division of charges, showing that only smokers had the highest charges.
+
+Figure 2a, the plot shows that most of the clusters are uniquely male or female. Cluster 9 is the only cluster with both males and females, with a slightly larger number of males. Figure 2b shows that each cluster belongs uniquely to a specific region, and there are no clusters with patients from multiple regions. Therefore, the different combinations of smoker, sex, and region features can represent each cluster.
+
+The age, bmi, and children features were plotted against the clusters as well, but they all showed similar averages for each cluster of around 38 ± 14, 30 ± 5, and 1.1 ± 1.2. When plotting all the data points of each cluster against the features, the data points very much varied across the full range for almost all the clusters. Therefore, these features could not give as much information about representing each cluster. 
+
+Through KMeans clustering, we were able to see how the patients could be clustered and what that clustering showed in looking at the charges. This silhouette score reached what we were trying to achieve (silhouette score > 0.5). This method was useful in finding out how to divide the charges into lower and higher charges. Furthermore, clustering showed what had the most impact on charges, which was the smoker feature, matching the correlation matrix. Through clustering, we were able to notice a trend in our clusters, with only smokers being charged higher insurance costs. In an effort to reduce insurance charges, we suggest to not smoke because non-smokers clusters have lower charges distributions; by not smoking, patients are much more likely to have lower insurance costs. The clustering will be useful for our regression problem during the supervised learning to show us the possible range for the two divisions/distributions of charges.
+
+
 
 #### KPrototype
 
