@@ -41,23 +41,23 @@ In addition to these actions, we also performed a one-hot encoding on the data, 
 
 To start our data exploration, we created a heat map to analyze the correlation between the different features and targets.  From this heat map we noticed that smoking was highly correlated with charges, and both bmi and age were moderately correlated with charges.  Since smoking, bmi, and age were the features most correlated with charges, we decided to look at these relationships more closely.
 
-<img width="489" alt="correlation" src="https://user-images.githubusercontent.com/46691358/98428361-1cb4c600-206f-11eb-9f7e-45fc9045d0b9.png">
+<img width="500" alt="correlation" src="https://user-images.githubusercontent.com/46691358/98428361-1cb4c600-206f-11eb-9f7e-45fc9045d0b9.png">
 
 Smoking appears to have a significant impact on charges.  We found that smokers tend to have charges from about $20,000 - $40,000, while non-smokers have much lower charges from about $5000 - $10000.
 
-<img width="535" alt="smoker" src="https://user-images.githubusercontent.com/46691358/98428471-95b41d80-206f-11eb-90fc-42a77309eefb.png">
+<img width="500" alt="smoker" src="https://user-images.githubusercontent.com/46691358/98428471-95b41d80-206f-11eb-90fc-42a77309eefb.png">
 
 When analyzing only BMI and charges, it appears that upon reaching an obese BMI, the population separates significantly. Some members of the population had charges that remained fairly consistent, while others saw charges double or triple.  After applying a hue to the plot indicating smoking status, it showed charges for smokers increase linearly with BMI, while non-smoker charges remained fairly consistent. This again shows the significant impact of smoking, which is only worsened by a higher BMI.
 
-<img width="535" alt="bmi-scatter" src="https://user-images.githubusercontent.com/46691358/98428482-aebcce80-206f-11eb-9875-b633e7ef5a92.png">
+<img width="500" alt="bmi-scatter" src="https://user-images.githubusercontent.com/46691358/98428482-aebcce80-206f-11eb-9875-b633e7ef5a92.png">
 
 Since poor BMI seems to lead to higher charges, we decided to further analyze this trend. Any member of the population with a BMI greater than 25 was labeled overweight, and others not overweight.  After comparing the two groups, it appears that most members of each group have charges around $8000. However, it is clear that those who are overweight are far more likely to suffer high charges compared to those who are not.
 
-<img width="531" alt="bmi-violin" src="https://user-images.githubusercontent.com/46691358/98428490-bda38100-206f-11eb-901e-900253b2da28.png">
+<img width="500" alt="bmi-violin" src="https://user-images.githubusercontent.com/46691358/98428490-bda38100-206f-11eb-901e-900253b2da28.png">
 
 The last relationship we chose to look at was between age and charges. As expected, increased age generally leads to increased charges, but like bmi, there appears to be distinct groups with vastly different charges.  When applying the smoker hue once again, it can be seen that charges for both smokers and non-smokers increase with age, but smokers have much higher charges.
 
-<img width="533" alt="age" src="https://user-images.githubusercontent.com/46691358/98428500-cd22ca00-206f-11eb-8a4f-74607d822914.png">
+<img width="500" alt="age" src="https://user-images.githubusercontent.com/46691358/98428500-cd22ca00-206f-11eb-8a4f-74607d822914.png">
 
 The results of this data exploration lead us to believe that smoking is by far the most important feature in determing insurance cost, with BMI and age also being helpful. We will be using unsupervised learning to confirm these conclusions in subsequent sections.
 
@@ -67,15 +67,17 @@ The results of this data exploration lead us to believe that smoking is by far t
 
 Despite already having a low number of features, we decided to use PCA on our data to see if we could further reduce the dimensionality. Before performing PCA, we scaled our dataset so that larger features would not affect the outcome. We then applied PCA to our dataset and plotted the principal components against the cumulative explained variance to determine how many would be needed to achieve our desired variance. The results indicated that we would need 8 out of 9 components to explain 99% of the total variance. Since this reduction from our regular dataset is extremely minor, we believe that it is not valuable to reduce the dimensionality.
 
-<img width="518" alt="pca-variance" src="https://user-images.githubusercontent.com/46691358/98429880-7a4d1080-2077-11eb-8ee9-461c53cd6c9e.png">
+<img width="500" alt="pca-variance" src="https://user-images.githubusercontent.com/46691358/98429880-7a4d1080-2077-11eb-8ee9-461c53cd6c9e.png">
 
 In addition to determining the number of principal components needed, we also visualized the first two and three components separately.  We split our dataset into high-cost and low-to-medium cost based on the median of the charges, and plotted this data in relation to the principal components. It can be seen that there is not much separation between the two groups in both 2D and 3D space, indicating that more principal components are likely necessary.
 
-<img width="511" alt="pca2" src="https://user-images.githubusercontent.com/46691358/98429884-8507a580-2077-11eb-9246-3b2e9cf1f0dd.png">
+<img width="500" alt="pca2" src="https://user-images.githubusercontent.com/46691358/98429884-8507a580-2077-11eb-9246-3b2e9cf1f0dd.png">
 
-<img width="511" alt="pca3" src="https://user-images.githubusercontent.com/46691358/98429891-93ee5800-2077-11eb-9fd0-e0a2c7f6d6ec.png">
+<img width="500" alt="pca3" src="https://user-images.githubusercontent.com/46691358/98429891-93ee5800-2077-11eb-9fd0-e0a2c7f6d6ec.png">
 
-#### Clustering
+#### KMeans
+
+
 
 ### Results
 For our unsupervised portion, we expect to discover relationships within the dataset that were not clear from our initial statistical analysis.  From these new relationships we hope to gain a deeper understanding of our data so that we can make better predictions during the supervised portion. For touchpoint 2, we are trying to achieve a silhouette coefficient >0.5 and 90% clustering accuracy using K-means. For the supervised portion, we expect to see an improvement in performance over Linear Regression when utilizing Random Forest, XGBoost, and ANN methods. By touchpoint 3, we are aiming to obtain a lower MSE value from Random Forest, XGBoost, or ANN than Linear Regression on either the combined or separated dataset. Overall, we want to be able to predict the insurance cost of anyone, given their specific features, with an accuracy >90%.
