@@ -84,7 +84,7 @@ We implemented the KMeans method from sklearn, assigning the number of clusters 
 
 Figure 1a showed the clusters being plotted against the charges. There were 2 main divisions within the charges for the 15 clusters, with about half of the clusters having a lower average charge and the other half having a higher average charge. The average charges of Clusters 0-7 were around $8,000 ± $6,000, and the average charges of Clusters 8-14 were around $30,000 ± $11,000. Figure 1b showed the clusters plotted against the smoker feature. Similar to the charges, there were two main divisions in the 15 clusters for the smoker feature. Clusters 0-7 had exclusively non-smokers, and clusters 8-14 had exclusively smokers, delineated by 0 standard deviation. The division was the exact same as the division of charges, showing that only smokers had the highest charges.
 
-<img width="816" alt="Screen Shot 2020-11-06 at 11 04 36 PM" src="https://user-images.githubusercontent.com/32435018/98431571-8ab7b800-2084-11eb-8dce-542cfb163658.png">
+<img width="925" alt="Screen Shot 2020-11-06 at 11 15 29 PM" src="https://user-images.githubusercontent.com/32435018/98431720-f8b0af00-2085-11eb-90e0-9d93f7280c13.png">
 
 Figure 2a, the plot shows that most of the clusters are uniquely male or female. Cluster 9 is the only cluster with both males and females, with a slightly larger number of males. Figure 2b shows that each cluster belongs uniquely to a specific region, and there are no clusters with patients from multiple regions. Therefore, the different combinations of smoker, sex, and region features can represent each cluster.
 
