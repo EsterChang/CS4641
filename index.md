@@ -65,11 +65,15 @@ The results of this data exploration lead us to believe that smoking is by far t
 
 #### Principal Component Analysis
 
+Despite already having a low number of features, we decided to use PCA on our data to see if we could further reduce the dimensionality. Before performing PCA, we scaled our dataset so that larger features would not affect the outcome. We then applied PCA to our dataset and plotted the principal components against the cumulative explained variance to determine how many would be needed to achieve our desired variance. The results indicated that we would need 8 out of 9 components to explain 99% of the total variance. Since this reduction from our regular dataset is extremely minor, we believe that it is not valuable to reduce the dimensionality.
+
 <img width="518" alt="pca-variance" src="https://user-images.githubusercontent.com/46691358/98429880-7a4d1080-2077-11eb-8ee9-461c53cd6c9e.png">
+
+In addition to determining the number of principal components needed, we also visualized the first two and three components separately.  We split our dataset into high-cost and low-to-medium cost based on the median of the charges, and plotted this data in relation to the principal components. It can be seen that there is not much separation between the two groups in both 2D and 3D space, indicating that more principal components are likely necessary.
 
 <img width="511" alt="pca2" src="https://user-images.githubusercontent.com/46691358/98429884-8507a580-2077-11eb-9246-3b2e9cf1f0dd.png">
 
-<img width="598" alt="pca3" src="https://user-images.githubusercontent.com/46691358/98429891-93ee5800-2077-11eb-9fd0-e0a2c7f6d6ec.png">
+<img width="511" alt="pca3" src="https://user-images.githubusercontent.com/46691358/98429891-93ee5800-2077-11eb-9fd0-e0a2c7f6d6ec.png">
 
 #### Clustering
 
