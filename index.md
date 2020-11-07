@@ -65,6 +65,12 @@ The results of this data exploration lead us to believe that smoking is by far t
 
 #### Principal Component Analysis
 
+<img width="518" alt="pca-variance" src="https://user-images.githubusercontent.com/46691358/98429880-7a4d1080-2077-11eb-8ee9-461c53cd6c9e.png">
+
+<img width="511" alt="pca2" src="https://user-images.githubusercontent.com/46691358/98429884-8507a580-2077-11eb-9246-3b2e9cf1f0dd.png">
+
+<img width="598" alt="pca3" src="https://user-images.githubusercontent.com/46691358/98429891-93ee5800-2077-11eb-9fd0-e0a2c7f6d6ec.png">
+
 #### Clustering
 
 ### Results
