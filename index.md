@@ -4,7 +4,7 @@
 
 The United States has seen an unsustainable increase in the cost of health care in recent
 decades. The accessibility and affordability of health care has been at the forefront of issues that
-Americans face on a daily basis. High costs often prevents people from seeking
+Americans face on a daily basis. High costs often prevent people from seeking
 proper treatment, and medical bills can be a major financial burden on U.S. families,
 especially those that are in lower-income households. Our goal is to offer accurate
 predictions of health insurance costs so that U.S. families are able to choose the right
@@ -12,7 +12,7 @@ insurance and make informed financial decisions. Since our problem involves the 
 of a continuous value, we will be utilizing regression methods to solve it.
 
 ### Dataset
-Our [dataset](https://www.kaggle.com/mirichoi0218/insurance) originates from Kaggle and contains a mix of text and numerical data. The features include:
+Our [dataset](https://www.kaggle.com/mirichoi0218/insurance) originates from Kaggle and contains a mix of numerical and categorical data. The features include:
 - Age: integer
 - Sex: male or female
 - BMI: decimal
@@ -64,7 +64,7 @@ Despite already having a low number of features, we decided to use PCA on our da
 
 ### Clustering
 #### KMeans
-We decided to use KMeans as our primary clustering method. After scaling our data, we used the elbow method and silhouette coefficient to determine the optimal k to use when clustering. While we were unable to find an exact optimal k, we found that 14 allowed us to extract meaningful information from our data and achieve a silhouette score of 0.52. Also, after tuning the random_state parameter on sklearn's KMeans implementation, we found that a random_state of 20 achieved the best results for our data.
+We decided to use KMeans as our primary clustering method. After scaling our data, we used the elbow method and silhouette coefficient to determine the optimal k to use when clustering. While we were unable to find an exact optimal k, we found that 15 allowed us to extract meaningful information from our data and achieve a silhouette score of 0.52. Also, after tuning the random_state parameter on sklearn's KMeans implementation, we found that a random_state of 20 achieved the best results for our data.
 
 <img width="300" alt="kmeans-elbow" src="https://user-images.githubusercontent.com/46691358/98430674-3ceb8180-207d-11eb-9277-53b621d6c4ce.png">
 
@@ -78,7 +78,7 @@ Another method that we attempted to use was KPrototype clustering. Since we have
 
 #### Cluster Analysis
 
-Even though we could not achieve great clustering on our dataset, we were still able to gain further insight into the importance of our features by using 14 clusters.  When observing the distribution of charges within each cluster, it is clear that some clusters have lower charges on average, while others have higher charges.
+Even though we could not achieve great clustering on our dataset, we were still able to gain further insight into the importance of our features by using 15 clusters.  When observing the distribution of charges within each cluster, it is clear that some clusters have lower charges on average, while others have higher charges.
 
 <img width="300" alt="cluster-charges" src="https://user-images.githubusercontent.com/46691358/98430718-7ae8a580-207d-11eb-9050-1a407936e1cd.png">
 
