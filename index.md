@@ -28,6 +28,15 @@ For the unsupervised learning portion of our project, we will be using K-means c
 
 For the supervised learning portion of our project, we will be attempting to obtain better performance than Linear Regression when predicting insurance costs since it is the most common approach.  The models we have chosen to utilize are Random Forest, XGBoost, and ANN.  While we believe that our chosen models will lead to better performance than Linear Regression for the total dataset, we will also be training our models with low-to-medium and high cost data separately.  The reason for this is we would like to see if we are able to make better predictions for specifically low-to-medium cost and specifically high cost insurance.  To compare the performance of our models, we will be using the mean squared error (MSE) metric to evaluate each individually.
 
+### Data Cleaning
+
+Before working with our dataset, we wanted to ensure that it was thoroughly cleaned and usable so that it would not affect the results of our unsupervised or supervised processes.  The steps we took to clean our data were:
+- Removing rows with missing values
+- Removing duplicate rows
+- Removing rows with bad values (ex: cost less than zero or smoker value not yes or no)
+
+In addition to these actions, we also performed a one-hot encoding on the data, converting features such as smoker from "yes" and "no" to 1 and 0.  One of our features, region, was encoded in two different ways for use in different parts of our project.  First, each of our four regions were encoded as 0, 1, 2, 3, and this encoding was used for our data exploration, such as in the correlation matrix.  However, this encoding would present a problem in our unsupervised learning, since when measuring the euclidean distance, the regions encoded as 0 and 3 would be seen as further apart than 0 and 1, even though there is no true meaning for this increased distance between the regions.  Therefore, our second encoding consisted of splitting region into four separate features, one for each region, so that no pair of regions would be seen as further apart than another.
+
 ### Results
 For our unsupervised portion, we expect to discover relationships within the dataset that were not clear from our initial statistical analysis.  From these new relationships we hope to gain a deeper understanding of our data so that we can make better predictions during the supervised portion. For touchpoint 2, we are trying to achieve a silhouette coefficient >0.5 and 90% clustering accuracy using K-means. For the supervised portion, we expect to see an improvement in performance over Linear Regression when utilizing Random Forest, XGBoost, and ANN methods. By touchpoint 3, we are aiming to obtain a lower MSE value from Random Forest, XGBoost, or ANN than Linear Regression on either the combined or separated dataset. Overall, we want to be able to predict the insurance cost of anyone, given their specific features, with an accuracy >90%.
 
