@@ -80,11 +80,9 @@ Another method that we attempted to use was KPrototype clustering. Since we have
 
 Even though we could not achieve great clustering on our dataset, we were still able to gain further insight into the importance of our features by using 15 clusters.  When observing the distribution of charges within each cluster, it is clear that some clusters have lower charges on average, while others have higher charges.
 
-<img width="300" alt="cluster-charges" src="https://user-images.githubusercontent.com/46691358/98430718-7ae8a580-207d-11eb-9050-1a407936e1cd.png">
+<img width="507" alt="Screen Shot 2020-11-06 at 11 10 25 PM" src="https://user-images.githubusercontent.com/32435018/98432345-4c71c700-208b-11eb-9b31-0477f329d17b.png">
 
 When these same clusters are shown in terms of smoker status, the influence of smoking is again very apparent. Recall that a value of 1 indicates a smoker and 0 a non-smoker. It can be seen that the clusters with high charges contain exclusively smokers, while the clusters with low charges contain exclusively non-smokers. This is a remarkable result, and again shows us that smoking status should be weighted much more than any other feature.
-
-<img width="300" alt="cluster-smoker" src="https://user-images.githubusercontent.com/46691358/98430727-863bd100-207d-11eb-884b-a75af0fb3e29.png">
 
 A surprising finding was that the majority of clusters were strictly male or female. Cluster 9 is the only cluster with both males and females, with a slightly larger number of males. Another thing we found was that each cluster belongs to a specific region, and there are no clusters with patients from multiple regions. We will be double-checking the impact of sex and region on charges before moving on to supervised learning.
 
