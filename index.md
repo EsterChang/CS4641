@@ -80,7 +80,7 @@ The silhouette method allowed us to clearly see what would be the optimal number
 
 We implemented the KMeans method from sklearn, assigning the number of clusters to 15. To get the same clustering results each time, we made the randomness of the initialization deterministic by defining the parameter random_state as 20. After running the KMeans algorithm, we decided to plot each cluster’s mean and standard deviation against each of the features to get a better understanding of how our data points were being clustered.
 
-<img width="496" alt="Screen Shot 2020-11-06 at 11 06 19 PM" src="https://user-images.githubusercontent.com/32435018/98431585-b8046600-2084-11eb-9ecc-bfd53b2e26cb.png">
+<img width="507" alt="Screen Shot 2020-11-06 at 11 10 25 PM" src="https://user-images.githubusercontent.com/32435018/98431657-54c70380-2085-11eb-95a7-8b7a98d9ee6c.png">
 
 Figure 1a showed the clusters being plotted against the charges. There were 2 main divisions within the charges for the 15 clusters, with about half of the clusters having a lower average charge and the other half having a higher average charge. The average charges of Clusters 0-7 were around $8,000 ± $6,000, and the average charges of Clusters 8-14 were around $30,000 ± $11,000. Figure 1b showed the clusters plotted against the smoker feature. Similar to the charges, there were two main divisions in the 15 clusters for the smoker feature. Clusters 0-7 had exclusively non-smokers, and clusters 8-14 had exclusively smokers, delineated by 0 standard deviation. The division was the exact same as the division of charges, showing that only smokers had the highest charges.
 
