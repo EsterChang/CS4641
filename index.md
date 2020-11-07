@@ -90,7 +90,11 @@ In addition to determining the number of principal components needed, we also vi
 
 #### Cluster Analysis
 
+Even though we could not achieve great clustering on our dataset, we were still able to gain further insight into the importance of our features by using 14 clusters.  When observing the distribution of charges within each cluster, it is clear that some clusters have lower charges on average, while others have higher charges.
+
 <img width="500" alt="cluster-charges" src="https://user-images.githubusercontent.com/46691358/98430718-7ae8a580-207d-11eb-9050-1a407936e1cd.png">
+
+When these same clusters are shown in terms of smoker status, the influence of smoking is again very apparent. Recall that a value of 1 indicates a smoker and 0 a non-smoker. It can be seen that the clusters with high charges contain exclusively smokers, while the clusters with low charges contain exclusively non-smokers. This is a remarkable result, and again shows us that smoking status should be weighted much more than any other feature.
 
 <img width="500" alt="cluster-smoker" src="https://user-images.githubusercontent.com/46691358/98430727-863bd100-207d-11eb-884b-a75af0fb3e29.png">
 
