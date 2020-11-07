@@ -70,10 +70,15 @@ In addition to determining the number of principal components needed, we also vi
 
 ### Clustering
 #### KMeans
+We decided to use KMeans as our clustering method. We took out the charges information from the dataset and only used the features dataset. We scaled our data using the scikit-learn preprocessing toolbox. The elbow method and silhouette method were the internal metrics we used to find optimal k. Through the elbow method, we saw the loss starting to flatten out, but we were unable to determine the exact optimal k.
 
 <img width="300" alt="kmeans-elbow" src="https://user-images.githubusercontent.com/46691358/98430674-3ceb8180-207d-11eb-9277-53b621d6c4ce.png">
 
+The silhouette method allowed us to clearly see what would be the optimal number of clusters, k. A silhouette score closer to 1 represents the data points are more well-matched to its own cluster. After running the silhouette method on our scaled data, we saw that the optimal k clusters is 15, with the highest silhouette score of 0.52.
+
 <img width="300" alt="kmeans-sil" src="https://user-images.githubusercontent.com/46691358/98430682-496fda00-207d-11eb-8e8a-384eaa24f6ba.png">
+
+We implemented the KMeans method from sciki, assigning the number of clusters to 15. To get the same clustering results each time, we made the randomness of the initialization deterministic by defining the parameter random_state as 20. After running the KMeans algorithm, we decided to plot each cluster’s mean and standard deviation against each of the features to get a better understanding of how our data points were being clustered.
 
 #### KPrototype
 
