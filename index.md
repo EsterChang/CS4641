@@ -86,6 +86,12 @@ When these same clusters are shown in terms of smoker status, the influence of s
 
 <img width="300" alt="cluster-smoker" src="https://user-images.githubusercontent.com/46691358/98430727-863bd100-207d-11eb-884b-a75af0fb3e29.png">
 
+A surprising finding was that the majority of clusters were strictly male or female. Cluster 9 is the only cluster with both males and females, with a slightly larger number of males. Another thing we found was that each cluster belongs to a specific region, and there are no clusters with patients from multiple regions. We will be double-checking the impact of sex and region on charges before moving on to supervised learning.
+
+<img width="816" alt="Screen Shot 2020-11-06 at 11 04 36 PM" src="https://user-images.githubusercontent.com/32435018/98431571-8ab7b800-2084-11eb-8dce-542cfb163658.png">
+
+The age, bmi, and children features were plotted against the clusters as well, but they all showed similar averages for each cluster of around 38 ± 14, 30 ± 5, and 1.1 ± 1.2. When plotting all the data points of each cluster against the features, the data points varied signficantly across the full range for almost all the clusters. Therefore, these features could not give as much information about representing each cluster.
+
 ## Results
 ### Expected
 For our unsupervised portion, we expect to gain a deeper understanding of the importance of each feature in our dataset. For touchpoint 2, we are trying to achieve a silhouette coefficient >0.5 using K-means. For the supervised portion, we expect to see an improvement in performance over Linear Regression when utilizing Random Forest, XGBoost, and ANN methods. By touchpoint 3, we are aiming to obtain a lower MSE value from Random Forest, XGBoost, or ANN than Linear Regression on either the combined or separated dataset. Overall, we want to be able to predict the insurance cost of anyone, given their specific features, with an accuracy >90%.
