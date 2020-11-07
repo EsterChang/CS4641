@@ -62,41 +62,17 @@ Despite already having a low number of features, we decided to use PCA on our da
 
 <img width="400" alt="pca-variance" src="https://user-images.githubusercontent.com/46691358/98429880-7a4d1080-2077-11eb-8ee9-461c53cd6c9e.png">
 
-In addition to determining the number of principal components needed, we also visualized the first two and three components separately.  We split our dataset into high-cost and low-to-medium cost based on the median of the charges, and plotted this data in relation to the principal components. It can be seen that there is not much separation between the two groups in both 2D and 3D space, indicating that more principal components are likely necessary.
-
-<img width="400" alt="pca2" src="https://user-images.githubusercontent.com/46691358/98429884-8507a580-2077-11eb-9246-3b2e9cf1f0dd.png">
-
-<img width="400" alt="pca3" src="https://user-images.githubusercontent.com/46691358/98429891-93ee5800-2077-11eb-9fd0-e0a2c7f6d6ec.png">
-
 ### Clustering
 #### KMeans
-We decided to use KMeans as our clustering method. We took out the charges information from the dataset and only used the features dataset. We scaled our data using the scikit-learn preprocessing toolbox. The elbow method and silhouette method were the internal metrics we used to find optimal k. Through the elbow method, we saw the loss starting to flatten out, but we were unable to determine the exact optimal k.
+We decided to use KMeans as our primary clustering method. After scaling our data, we used the elbow method and silhouette coefficient to determine the optimal k to use when clustering. While we were unable to find an exact optimal k, we found that 14 allowed us to extract meaningful information from our data and achieve a silhouette score of 0.52. Also, after tuning the random_state parameter on sklearn's KMeans implementation, we found that a random_state of 20 achieved the best results for our data.
 
 <img width="300" alt="kmeans-elbow" src="https://user-images.githubusercontent.com/46691358/98430674-3ceb8180-207d-11eb-9277-53b621d6c4ce.png">
 
-The silhouette method allowed us to clearly see what would be the optimal number of clusters, k. A silhouette score closer to 1 represents the data points are more well-matched to its own cluster. After running the silhouette method on our scaled data, we saw that the optimal k clusters is 15, with the highest silhouette score of 0.52.
-
 <img width="300" alt="kmeans-sil" src="https://user-images.githubusercontent.com/46691358/98430682-496fda00-207d-11eb-8e8a-384eaa24f6ba.png">
-
-We implemented the KMeans method from sklearn, assigning the number of clusters to 15. To get the same clustering results each time, we made the randomness of the initialization deterministic by defining the parameter random_state as 20. After running the KMeans algorithm, we decided to plot each cluster’s mean and standard deviation against each of the features to get a better understanding of how our data points were being clustered.
-
-<img width="510" alt="Screen Shot 2020-11-06 at 11 11 39 PM" src="https://user-images.githubusercontent.com/32435018/98431670-6f997800-2085-11eb-8809-6897af7d240d.png">
-
-Figure 1a showed the clusters being plotted against the charges. There were 2 main divisions within the charges for the 15 clusters, with about half of the clusters having a lower average charge and the other half having a higher average charge. The average charges of Clusters 0-7 were around $8,000 ± $6,000, and the average charges of Clusters 8-14 were around $30,000 ± $11,000. Figure 1b showed the clusters plotted against the smoker feature. Similar to the charges, there were two main divisions in the 15 clusters for the smoker feature. Clusters 0-7 had exclusively non-smokers, and clusters 8-14 had exclusively smokers, delineated by 0 standard deviation. The division was the exact same as the division of charges, showing that only smokers had the highest charges.
-
-<img width="925" alt="Screen Shot 2020-11-06 at 11 15 29 PM" src="https://user-images.githubusercontent.com/32435018/98431720-f8b0af00-2085-11eb-90e0-9d93f7280c13.png">
-
-Figure 2a, the plot shows that most of the clusters are uniquely male or female. Cluster 9 is the only cluster with both males and females, with a slightly larger number of males. Figure 2b shows that each cluster belongs uniquely to a specific region, and there are no clusters with patients from multiple regions. Therefore, the different combinations of smoker, sex, and region features can represent each cluster.
-
-The age, bmi, and children features were plotted against the clusters as well, but they all showed similar averages for each cluster of around 38 ± 14, 30 ± 5, and 1.1 ± 1.2. When plotting all the data points of each cluster against the features, the data points very much varied across the full range for almost all the clusters. Therefore, these features could not give as much information about representing each cluster. 
-
-Through KMeans clustering, we were able to see how the patients could be clustered and what that clustering showed in looking at the charges. This silhouette score reached what we were trying to achieve (silhouette score > 0.5). This method was useful in finding out how to divide the charges into lower and higher charges. Furthermore, clustering showed what had the most impact on charges, which was the smoker feature, matching the correlation matrix. Through clustering, we were able to notice a trend in our clusters, with only smokers being charged higher insurance costs. In an effort to reduce insurance charges, we suggest to not smoke because non-smokers clusters have lower charges distributions; by not smoking, patients are much more likely to have lower insurance costs. The clustering will be useful for our regression problem during the supervised learning to show us the possible range for the two divisions/distributions of charges.
-
-
 
 #### KPrototype
 
-Another method that we attempted to use was KPrototype clustering. Since we have a mix of numerical and categorical data, many tradional clustering algorithms are difficult to apply to our data.  In KPrototype clustering, the dissimiliarity between features is determined by comparing numerical and categorical data differently.  After specifying which features are categorical, the algorithm will cluster the data using, for example, euclidean distance for numerical features, and hamming distance for categorical features. By using this method, we were able to achieve slighly improved distortion values, but ultimately we found our KMeans clustering to be more useful for understanding our data.
+Another method that we attempted to use was KPrototype clustering. Since we have a mix of numerical and categorical data, many traditional clustering algorithms are difficult to apply to our data.  In KPrototype clustering, the dissimiliarity between features is determined by comparing numerical and categorical data differently.  After specifying which features are categorical, the algorithm will cluster the data using, for example, euclidean distance for numerical features, and hamming distance for categorical features. By using this method, we were able to achieve slighly improved distortion values, but ultimately we found our KMeans clustering to be more useful for understanding our data.
 
 <img width="300" alt="kproto-elbow" src="https://user-images.githubusercontent.com/46691358/98430691-58568c80-207d-11eb-9882-3af78e71128d.png">
 
@@ -115,6 +91,7 @@ When these same clusters are shown in terms of smoker status, the influence of s
 For our unsupervised portion, we expect to gain a deeper understanding of the importance of each feature in our dataset. For touchpoint 2, we are trying to achieve a silhouette coefficient >0.5 using K-means. For the supervised portion, we expect to see an improvement in performance over Linear Regression when utilizing Random Forest, XGBoost, and ANN methods. By touchpoint 3, we are aiming to obtain a lower MSE value from Random Forest, XGBoost, or ANN than Linear Regression on either the combined or separated dataset. Overall, we want to be able to predict the insurance cost of anyone, given their specific features, with an accuracy >90%.
 
 ### Current
+Before starting our unsupervised portion, we expected to gain further insight into our data and achieve a silhouette coefficent >0.5 for K-means. We achieved this goal, and also went further by using PCA and KPrototype. This information will be helpful for us when deciding how to split our data into high cost and low-to-medium cost, and then seeing whether supervised learning can be improved. It is clear that smokers suffer signficant charges, and other factors such as BMI, age, and possiblity sex can also have an impact.
 
 ## Next Steps
 For the supervised learning portion of our project, we will be attempting to obtain better performance than Linear Regression when predicting insurance costs since it is the most common approach.  The models we have chosen to utilize are Random Forest, XGBoost, and ANN.  While we believe that our chosen models will lead to better performance than Linear Regression for the total dataset, we will also be training our models with low-to-medium and high cost data separately.  The reason for this is we would like to see if we are able to make better predictions for specifically low-to-medium cost and specifically high cost insurance.  To compare the performance of our models, we will be using the mean squared error (MSE) metric to evaluate each individually.
