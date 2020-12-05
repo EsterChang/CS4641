@@ -104,7 +104,7 @@ Brief explanation of model and why this model was chosen. Hyperparameter tuning.
 
 Brief explanation and why this model was chosen. Hyperparameter tuning.  Brief discussion of results and why they were what they were.
 
-### Artifician Neural Network
+### Artificial Neural Network
 
 Brief explanation and why this model was chosen. Hyperparameter tuning.  Brief discussion of results and why they were what they were.
 
