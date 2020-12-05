@@ -90,6 +90,30 @@ A surprising finding was that the majority of clusters were strictly male or fem
 
 The age, bmi, and children features were plotted against the clusters as well, but they all showed similar averages for each cluster of around 38 ± 14, 30 ± 5, and 1.1 ± 1.2. When plotting all the data points of each cluster against the features, the data points varied signficantly across the full range for almost all the clusters. Therefore, these features could not give as much information about representing each cluster.
 
+## Supervised Learning
+
+### Linear Regression
+
+Brief explanation and why this model was chosen.  Brief discussion of results and why they were what they were.
+
+### Random Forest
+
+Brief explanation of model and why this model was chosen. Hyperparameter tuning.  Brief discussion of results and why they were what they were.
+
+### XGBoost
+
+Brief explanation and why this model was chosen. Hyperparameter tuning.  Brief discussion of results and why they were what they were.
+
+### Artifician Neural Network
+
+Brief explanation and why this model was chosen. Hyperparameter tuning.  Brief discussion of results and why they were what they were.
+
+### Results
+
+Metric overview and predictive ability of best models for all, high, and low cost data.
+
+------ Remove the stuff below once finished with the stuff above ------
+
 ## Results
 ### Expected
 For our unsupervised portion, we expect to gain a deeper understanding of the importance of each feature in our dataset. For touchpoint 2, we are trying to achieve a silhouette coefficient >0.5 using K-means. For the supervised portion, we expect to see an improvement in performance over Linear Regression when utilizing Random Forest, XGBoost, and ANN methods. By touchpoint 3, we are aiming to obtain a lower MSE value from Random Forest, XGBoost, or ANN than Linear Regression on either the combined or separated dataset. Overall, we want to be able to predict the insurance cost of anyone, given their specific features, with an accuracy >90%.
