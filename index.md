@@ -112,13 +112,33 @@ Linear Regression is among the most common approaches we have seen others use to
 
 ### Random Forest
 
-Brief explanation of model and why this model was chosen. Hyperparameter tuning.  Brief discussion of results and why they were what they were.
+The first of our chosen models we decided to evaluate was Random Forest since this method has been shown to provide accurate results in wide variety of similar problems. As an implementation, we used Scikit-learn's RandomForestRegressor. Using boostrap aggregating allowed us to achieve better results from this model, independent of other parameters, so we chose to keep this constant as we searched for our other optimal parameters with RandomizedSearch. These parameters included the number of trees, column ratio for each tree, max tree depth, min samples for a split, and min samples to be a leaf.
+
+The search space for RandomizedSearch was set as follows after manual tuning and run for 300 iterations:
+- Number of trees: 100 - 200 (inc of 1)
+- Column ratio for each tree: 0.5 - 0.9 (inc of 0.1) and auto
+  - Auto is equivalent to using all of the columns
+- Max tree depth: 2 - 10 (inc of 1)
+- Min samples for a split: 2 - 10 (inc of 1)
+- Min samples to be a leaf: 1 - 10 (inc of 1)
+
+#### All Cost Evaluation
+
+<img width="1019" alt="Screen Shot 2020-12-07 at 6 38 39 AM" src="https://user-images.githubusercontent.com/46691358/101346722-fb561e00-3856-11eb-9d65-667d9bfac158.png">
+
+#### High Cost Evaluation
+
+<img width="1021" alt="Screen Shot 2020-12-07 at 6 38 53 AM" src="https://user-images.githubusercontent.com/46691358/101346752-05781c80-3857-11eb-9e09-413b8a281a88.png">
+
+#### Low Cost Evaluation
+
+<img width="1005" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/46691358/101346783-132da200-3857-11eb-9d87-00a2b980f6af.png">
 
 ### XGBoost
 
-The next model we chose to evaluate was XGBoost. After conducting our research, we learned that XGBoost has been able to make accurate predictions for low-to-medium cost insurance in the past, so we chose it to try to improve our own low-to-medium cost predictions. As an implementation, we used XGBRegressor from the xgboost library. For the learning objective, we found that reg:squarederror produced the best results, so we decided to keep this objective constant while tuning other parameters with 300 iterations of RandomizedSearch. These parameters included the number of gradient boosted trees, max tree depth, learning rate, gamma, subsample ratio for each tree, and column ratio for each tree.
+The next model we chose to evaluate was XGBoost. After conducting our research, we learned that XGBoost has been able to make accurate predictions for low-to-medium cost insurance in the past, so we chose it to try to improve our own low-to-medium cost predictions. As an implementation, we used XGBRegressor from the xgboost library. For the learning objective, we found that reg:squarederror produced the best results, so we decided to keep this objective constant while tuning other parameters with RandomizedSearch. These parameters included the number of gradient boosted trees, max tree depth, learning rate, gamma, subsample ratio for each tree, and column ratio for each tree.
 
-The search space for RandomizedSearch was set as follows:
+The search space for RandomizedSearch was set as follows after manual tuning and run for 300 iterations:
 - Number of gradient boosted trees: 100 - 200 (inc of 1)
 - Max tree depth: 2 - 10 (inc of 1)
 - Learning rate: 0.01 - 0.2 (inc of 0.01)
@@ -140,9 +160,9 @@ The search space for RandomizedSearch was set as follows:
 
 ### Artificial Neural Network
 
-The last model we chose to evaluate was ANN. After conducting our research, we learned that ANN has been able to make accurate predictions for high cost insurance in the past, so we chose it to try to improve our own high cost predictions. As an implementation, we used Scikit-learn's MLPRegressor. Since our dataset is not very large, we used the lbfgs solver for weight optimization, as this solver is known to help smaller datasets converge faster and perform better. We also chose to use one hidden layer since we discovered that only one was necessary for most other problems of similar scale and complexity. To optimize the remaining parameters, we again made use of RandomizedSearch with 300 iterations. These parameters included the maximum number of iterations, size of our hidden layer, activation function, and alpha value.
+The last model we chose to evaluate was ANN. After conducting our research, we learned that ANN has been able to make accurate predictions for high cost insurance in the past, so we chose it to try to improve our own high cost predictions. As an implementation, we used Scikit-learn's MLPRegressor. Since our dataset is not very large, we used the lbfgs solver for weight optimization, as this solver is known to help smaller datasets converge faster and perform better. We also chose to use one hidden layer since we discovered that only one was necessary for most other problems of similar scale and complexity. To optimize the remaining parameters, we again made use of RandomizedSearch. These parameters included the maximum number of iterations, size of our hidden layer, activation function, and alpha value.
 
-The search space for RandomizedSearch was set as follows:
+The search space for RandomizedSearch was set as follows after manual tuning and run for 300 iterations:
 - Maximum iterations: 500 - 100 (inc of 100)
   - Values in this range allowed the model to converge most of the time
 - Size of hidden layer: 2 - 7 (inc of 1)
