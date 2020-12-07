@@ -199,13 +199,13 @@ The search space for RandomizedSearch was set as follows after manual tuning and
 
 After training and evaluating our models with different combinations of parameters, we compared the R2 scores and MSE values of each to determine which offered the best predictions for all, high, and low costs.  A common problem we found was a decrease in performance on high cost data only.  This proved to be significant for linear regression and ANN, and noticeable for Random Forest and XGBoost.  We believe that this is caused by the low number of observations in the high cost training set, so there was little we could do to address this issue.  On the other hand, our best results were from low-to-medium cost data only, which demonstrates the value of our decision to split. Below is a summary of our supervised metric evaluation.
 
-#### R<sup>2</sup> Results
-<img width="1328" alt="Screen Shot 2020-12-07 at 3 12 20 PM" src="https://user-images.githubusercontent.com/32435018/101400482-fc12a280-389e-11eb-99b0-3fbfe90abd81.png">
+#### R2 Results
+
+<img width="355" alt="Screen Shot 2020-12-07 at 5 22 49 PM" src="https://user-images.githubusercontent.com/46691358/101412712-0dfd4100-38b1-11eb-9f3f-fc24ff751a0e.png">
 
 #### MSE Results
-<img width="1334" alt="Screen Shot 2020-12-07 at 3 14 31 PM" src="https://user-images.githubusercontent.com/32435018/101400492-ff0d9300-389e-11eb-8159-87266b0481cd.png">
 
-After comparing the evaluation metrics on all models and datasets in the above figures, we discovered that ANN performed the best on the combined dataset (R^2 score = 0.857, MSE = 0.164), and XGBoost performed best on both the high-cost (R^2 score = 0.848, MSE = 0.129) and the low-cost (R^2 score = 0.894, MSE = 0.113) datasets.
+<img width="354" alt="Screen Shot 2020-12-07 at 5 23 00 PM" src="https://user-images.githubusercontent.com/46691358/101412738-18b7d600-38b1-11eb-90b0-ae174b9f9616.png">
 
 #### All Costs
 
