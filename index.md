@@ -90,7 +90,7 @@ As stated previously, even though it was difficult to find meaningful clusters, 
 
 ## Supervised Learning
 
-To make the best possible predictions, we compared the performance of four different regression models on combined, high, and low-to-medium cost data individually. By also training each of our models with high and low-to-medium cost data only, we hoped to achieve more accurate predictions for individuals highly likely to have low-to-medium or high costs, which we now know to be smokers and potentially those very overweight.
+To make the best possible predictions, we compared the performance of four different regression models on combined, high, and low-to-medium cost data individually. By also training each of our models with high and low-to-medium cost data only, we hoped to achieve more accurate predictions for individuals highly likely to have low-to-medium or high costs, which we now know is significantly influenced by smoking and potentially a higher BMI.
 
 We used our unsupervised results to determine the threshold to split high cost versus low-medium cost for our supervised learning. After creating our high and low-to-medium cost datasets based on our $15000 threshold, we created a training and testing set for each, as well as for the combined dataset.  Each training set consisted of 80% of the data in a set, while each testing set consisted of the remaining 20%. All data in both training and testing sets was scaled so that evaluation metrics were interpretable, and the performance of scaled sets was compared against unscaled sets to ensure that performance was unaffected.
 
