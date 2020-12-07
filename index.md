@@ -209,19 +209,19 @@ After comparing the evaluation metrics on all models and datasets in the above f
 
 #### All Costs
 
-For our all costs dataset, we found that ANN had the best performance. This was a surprising discovery, since we expected ANN to have the best results for high cost data. However, ANN ended up performing significantly worse on high cost data, and as mentioned previously, we believe that this is because of the lack of observations in the set. With more observations in the training set, we believe that ANN would perform the best on the high cost set, but we are glad this method still proved to be useful. We found that 500 iterations, 4 nodes in our hidden layer, relu activation function, lbfgs solver, and an alpha value of 0.0009 led to the best performance for this model on all costs.
+For our all costs dataset, we found that ANN had the best performance with XGBoost and Random Forest following closely behind. This was a surprising discovery, since we expected ANN to have the best results for high cost data. However, ANN ended up performing significantly worse on high cost data, and as mentioned previously, we believe that this is because of the lack of observations in the set. With more observations in the training set, we believe that ANN would perform the best on the high cost set, but we are glad this method still proved to be useful. We found that 500 iterations, 4 nodes in our hidden layer, relu activation function, lbfgs solver, and an alpha value of 0.0009 led to the best performance for this model on all costs. The predictive performance of this model is shown below.
 
 <img width="400" alt="Screen Shot 2020-12-07 at 6 51 07 AM" src="https://user-images.githubusercontent.com/46691358/101347906-c3e87100-3858-11eb-9bb9-e27c5a437a1d.png">
 
 #### High Costs
 
-XGBoost performed the best.
+For our high costs dataset, we found that XGBoost had the best performance with Random Forest following closely behind. We found that a squared error learning objective, 166 trees, max depth of 3, column ratio for each tree of 0.9, subsample ratio for each tree of 1, learning rate of 0.06, and gamma value of 0.1 led to the best performance for this model on high costs. The predictive performance of this model is shown below.
 
 <img width="400" alt="Screen Shot 2020-12-07 at 6 51 29 AM" src="https://user-images.githubusercontent.com/46691358/101347947-d662aa80-3858-11eb-9db6-444d58522035.png">
 
 #### Low Costs
 
-XGBoost performed the best.
+For our low costs dataset, we found that XGBoost again had the best performance with ANN following extremely closely behind. We found that a squared error learning objective, 195 trees, max depth of 2, column ratio for each tree of 0.6, subsample ratio for each tree of 1, learning rate of 0.07, and gamma value of 0.01 led to the best performance for this model on low costs. The predictive performance of this model is shown below.
 
 <img width="400" alt="Screen Shot 2020-12-07 at 6 51 48 AM" src="https://user-images.githubusercontent.com/46691358/101347988-e7132080-3858-11eb-8b36-91247e438ab8.png">
 
