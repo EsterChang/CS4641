@@ -82,19 +82,11 @@ Another method that we attempted to use was KPrototype clustering. Since we have
 
 <img width="400" alt="kproto-elbow" src="https://user-images.githubusercontent.com/46691358/98430691-58568c80-207d-11eb-9882-3af78e71128d.png">
 
-#### Cluster Analysis
+### Results
 
-Even though we could not achieve great clustering on our dataset, we were still able to gain further insight into the importance of our features by using 15 clusters.  When observing the distribution of charges within each cluster, it is clear that some clusters have lower charges on average, while others have higher charges. The average charges of Clusters 0-7 were around $8,000 ± $6,000, and the average charges of Clusters 8-14 were around $30,000 ± $11,000. 
+As stated previously, even though it was difficult to find meaningful clusters, we were able to gain valuable information from using KMeans with 15 clusters that confirmed our earlier data exploration findings. When observing the average and standard deviation of the charges in each cluster, it is clear that some clusters primarily have much lower charges than others.  To investigate this phenomenon, we looked at the average and standard deviation of each feature for each cluster. Only one feature offered a clear and meaningful explanation for the difference of charges between clusters: smoking. Every cluster that had signficantly higher average charges consisted of only smokers. This evidence confirms the earlier claim made in the data exploration section that smoking is by far the most important feature in determing an individual's risk for high insurance costs. Following further analysis of the plots from our data exploration and clustering results, we determined that the optimal split between high and low-to-medium cost would be $15000.
 
-<img width="507" alt="Screen Shot 2020-11-06 at 11 10 25 PM" src="https://user-images.githubusercontent.com/32435018/98432345-4c71c700-208b-11eb-9b31-0477f329d17b.png">
-
-When these same clusters are shown in terms of smoker status, the influence of smoking is again very apparent. Recall that a value of 1 indicates a smoker and 0 a non-smoker. It can be seen that the clusters with high charges contain exclusively smokers, while the clusters with low charges contain exclusively non-smokers. Similar to the charges, there were two main divisions in the 15 clusters for the smoker feature. Clusters 0-7 had exclusively non-smokers, and clusters 8-14 had exclusively smokers, delineated by 0 standard deviation. This is a remarkable result, and again shows us that smoking status should be weighted much more than any other feature.
-
-A surprising finding was that the majority of clusters were strictly male or female. Cluster 9 is the only cluster with both males and females, with a slightly larger number of males. Another thing we found was that each cluster belongs to a specific region, and there are no clusters with patients from multiple regions. We will be double-checking the impact of sex and region on charges before moving on to supervised learning.
-
-<img width="816" alt="Screen Shot 2020-11-06 at 11 04 36 PM" src="https://user-images.githubusercontent.com/32435018/98431571-8ab7b800-2084-11eb-8dce-542cfb163658.png">
-
-The age, bmi, and children features were plotted against the clusters as well, but they all showed similar averages for each cluster of around 38 ± 14, 30 ± 5, and 1.1 ± 1.2. When plotting all the data points of each cluster against the features, the data points varied signficantly across the full range for almost all the clusters. Therefore, these features could not give as much information about representing each cluster.
+<img width="400" alt="Screen Shot 2020-12-07 at 2 59 04 AM" src="https://user-images.githubusercontent.com/46691358/101324475-52002f80-3838-11eb-80ed-b18f594e1c1b.png"><img width="400" alt="Screen Shot 2020-12-07 at 2 59 39 AM" src="https://user-images.githubusercontent.com/46691358/101324539-680df000-3838-11eb-95c4-a54e66b5d7fc.png">
 
 ## Supervised Learning
 
