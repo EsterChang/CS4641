@@ -96,7 +96,7 @@ We used our unsupervised results to determine the threshold to split high cost v
 
 ### Linear Regression
 
-Linear Regression is among the most common approaches we have seen others use to predict insurance costs. Since this method is so common, we decided to use it as a starting point to compare to our chosen models. This method did not require any hyperparameter tuning and was not one of our primary methods. The following graphs show the R^2 scores and MSE scores for each dataset.
+Linear Regression is among the most common approaches we have seen others use to predict insurance costs. Since this method is so common, we decided to use it as a starting point to compare to our chosen models. This method did not require any hyperparameter tuning and was not one of our primary methods.
 
 #### R2 Results
 <img width="400" alt="r^2 linear regression" src="https://user-images.githubusercontent.com/41976165/101408413-5e24d500-38aa-11eb-890e-e3b957676103.PNG">
