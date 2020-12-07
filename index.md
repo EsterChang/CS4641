@@ -98,7 +98,7 @@ We used our unsupervised results to determine the threshold to split high cost v
 
 Linear Regression is among the most common approaches we have seen others use to predict insurance costs. Since this method is so common, we decided to use it as a starting point to compare to our chosen models. This method did not require any hyperparameter tuning and was not one of our primary methods. The following graphs show the R^2 scores and MSE scores for each dataset.
 
-#### R^2 Results
+#### R2 Results
 <img width="400" alt="r^2 linear regression" src="https://user-images.githubusercontent.com/41976165/101408413-5e24d500-38aa-11eb-890e-e3b957676103.PNG">
 
 #### MSE Results
@@ -107,7 +107,7 @@ Linear Regression is among the most common approaches we have seen others use to
 
 ### Random Forest
 
-The first of our chosen models we decided to evaluate was Random Forest since this method has been shown to provide accurate results in wide variety of similar problems. As an implementation, we used Scikit-learn's RandomForestRegressor. Using boostrap aggregating allowed us to achieve better results from this model, independent of other parameters, so we chose to keep this constant as we searched for our other optimal parameters with RandomizedSearch. These parameters included the number of trees, column ratio for each tree, max tree depth, min samples for a split, and min samples to be a leaf.
+The first of our chosen models we decided to evaluate was Random Forest since this method has been shown to provide accurate results in wide variety of similar problems. As an implementation, we used Scikit-learn's RandomForestRegressor. Using bootstrap aggregating allowed us to achieve better results from this model, independent of other parameters, so we chose to keep this constant as we searched for our other optimal parameters with RandomizedSearch. These parameters included the number of trees, column ratio for each tree, max tree depth, min samples for a split, and min samples to be a leaf.
 
 The search space for RandomizedSearch was set as follows after manual tuning and run for 300 iterations:
 - Number of trees: 100 - 200 (inc of 1)
@@ -129,7 +129,7 @@ The search space for RandomizedSearch was set as follows after manual tuning and
 
 <img width="1005" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/46691358/101346783-132da200-3857-11eb-9d87-00a2b980f6af.png">
 
-#### R^2 Results
+#### R2 Results
 <img width="400" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/41976165/101408829-fa4edc00-38aa-11eb-8e4f-a5d1489aed14.PNG">
 
 #### MSE Results
@@ -159,7 +159,7 @@ The search space for RandomizedSearch was set as follows after manual tuning and
 
 <img width="1053" alt="Screen Shot 2020-12-07 at 6 02 43 AM" src="https://user-images.githubusercontent.com/46691358/101343412-f8a4fa00-3851-11eb-9167-8114edc2bd5a.png">
 
-#### R^2 Results
+#### R2 Results
 <img width="400" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/41976165/101409014-3b46f080-38ab-11eb-9646-f65eea1b9585.PNG">
 
 #### MSE Results
@@ -189,7 +189,7 @@ The search space for RandomizedSearch was set as follows after manual tuning and
 
 <img width="800" alt="Screen Shot 2020-12-07 at 5 21 50 AM" src="https://user-images.githubusercontent.com/46691358/101339357-50406700-384c-11eb-927c-4f1145258799.png">
 
-#### R^2 Results
+#### R2 Results
 <img width="400" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/41976165/101409054-4ef25700-38ab-11eb-9e4a-f878fc4a8bce.PNG">
 
 #### MSE Results
@@ -197,7 +197,7 @@ The search space for RandomizedSearch was set as follows after manual tuning and
 
 ### Supervised Results
 
-We compared the R^2 score and MSE evaluation metrics to determine which supervised learning model best predicted the charges for all cost, high cost, and lost cost. Limitations include the dataset itself. One of the reasons for the lower evaluation metric values for the high cost in comparison to the low cost may be due to this limitation that our dataset had more lower cost data points.
+After training and evaluating our models with different combinations of parameters, we compared the R2 scores and MSE values of each to determine which offered the best predictions for all, high, and low costs.  A common problem we found was a decrease in performance on high cost data only.  This proved to be significant for linear regression and ANN, and noticeable for Random Forest and XGBoost.  We believe that this is caused by the low number of observations in the high cost training set, so there was little we could do to address this issue.  On the other hand, our best results were from low-to-medium cost data only, which demonstrates the value of our decision to split. Below is a summary of our supervised metric evaluation.
 
 #### R<sup>2</sup> Results
 <img width="1328" alt="Screen Shot 2020-12-07 at 3 12 20 PM" src="https://user-images.githubusercontent.com/32435018/101400482-fc12a280-389e-11eb-99b0-3fbfe90abd81.png">
@@ -209,7 +209,7 @@ After comparing the evaluation metrics on all models and datasets in the above f
 
 #### All Costs
 
-ANN performed the best.
+For our all costs dataset, we found that ANN had the best performance. This was a surprising discovery, since we expected ANN to have the best results for high cost data. However, ANN ended up performing significantly worse on high cost data, and as mentioned previously, we believe that this is because of the lack of observations in the set. With more observations in the training set, we believe that ANN would perform the best on the high cost set, but we are glad this method still proved to be useful. We found that 500 iterations, 4 nodes in our hidden layer, relu activation function, lbfgs solver, and an alpha value of 0.0009 led to the best performance for this model on all costs.
 
 <img width="400" alt="Screen Shot 2020-12-07 at 6 51 07 AM" src="https://user-images.githubusercontent.com/46691358/101347906-c3e87100-3858-11eb-9bb9-e27c5a437a1d.png">
 
