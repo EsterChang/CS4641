@@ -65,7 +65,7 @@ The results of this data exploration lead us to believe that smoking is by far t
 
 ### Principal Component Analysis
 
-Despite already having a low number of features, we decided to use PCA on our data to see if we could further reduce the dimensionality. Before performing PCA, we scaled our dataset so that larger features would not affect the outcome. We then applied PCA to our dataset and plotted the principal components against the cumulative explained variance to determine how many would be needed to achieve our desired variance. The results indicated that we would need 8 out of 9 components to explain 99% of the total variance. Since this reduction from our regular dataset is extremely minor, we believe that it is not valuable to reduce the dimensionality.
+Despite already having a low number of features, we decided to use PCA to see if we could further reduce the dimensionality. After performing PCA on our scaled features, we plotted the principal components against cumulative explained variance and found that we would need 8 out of 9 of these components to explain 99% of the total variance. Since this reduction from our existing dataset is very minor, we believe that it is not valuable to reduce the dimensionality.
 
 <img width="400" alt="pca-variance" src="https://user-images.githubusercontent.com/46691358/98429880-7a4d1080-2077-11eb-8ee9-461c53cd6c9e.png">
 
