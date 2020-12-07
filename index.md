@@ -13,7 +13,7 @@ informed financial decisions.
 
 To accomplish this task, we trained multiple regression models with the dataset below and evaluated
 their performance by comparing each R2 Score and MSE. We repeated this process for both high costs only and
-low-to-medium costs only in an attempt to make better predictions for individuals who are likely to belong in
+low-to-medium costs only in an attempt to make better predictions for individuals who are highly likely to belong in
 one of these categories. Through our exploratory data analysis and unsupervised learning, we identified
 the factors that would make an individual more likely to experience high costs, and a dollar amount to split
 the dataset on to distinguish between high and low-to-medium costs.
@@ -89,6 +89,10 @@ As stated previously, even though it was difficult to find meaningful clusters, 
 <img width="400" alt="Screen Shot 2020-12-07 at 2 59 04 AM" src="https://user-images.githubusercontent.com/46691358/101324475-52002f80-3838-11eb-80ed-b18f594e1c1b.png"><img width="400" alt="Screen Shot 2020-12-07 at 2 59 39 AM" src="https://user-images.githubusercontent.com/46691358/101324539-680df000-3838-11eb-95c4-a54e66b5d7fc.png">
 
 ## Supervised Learning
+
+To make the best possible predictions, we compared the performance of four different regression models on combined, high, and low-to-medium cost data individually. By also training each of our models with high and low-to-medium cost data only, we hoped to achieve more accurate predictions for individuals highly likely to have low-to-medium or high costs, which we now know to be smokers and potentially those very overweight.
+
+After creating our high and low-to-medium cost datasets based on our $15000 threshold, we created a training and testing set for each, as well as for the combined dataset.  Each training set consisted of 80% of the data in a set, while each testing set consisted of the remaining 20%.  Our models were evaluated using R2 Score and MSE, with results discussed below.
 
 ### Linear Regression
 
