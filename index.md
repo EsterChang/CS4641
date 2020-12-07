@@ -82,7 +82,7 @@ Another method that we attempted to use was KPrototype clustering. Since we have
 
 <img width="400" alt="kproto-elbow" src="https://user-images.githubusercontent.com/46691358/98430691-58568c80-207d-11eb-9882-3af78e71128d.png">
 
-### Results
+### Unsupervised Results
 
 As stated previously, even though it was difficult to find meaningful clusters, we were able to gain valuable information from using KMeans with 15 clusters that confirmed our earlier data exploration findings. When observing the average and standard deviation of the charges in each cluster, it is clear that some clusters primarily have much lower charges than others.  To investigate this phenomenon, we looked at the average and standard deviation of each feature for each cluster. Only one feature offered a clear and meaningful explanation for the difference of charges between clusters: smoking. Every cluster that had signficantly higher average charges consisted of only smokers. This evidence confirms the earlier claim made in the data exploration section that smoking is by far the most important feature in determing an individual's risk for high insurance costs. These results coupled with our earlier findings from data exploration lead us to believe that $15000 is the optimal split between high and low-to-medium cost insurance, as this represents a split between the charges for smokers and non-smokers.
 
@@ -112,7 +112,7 @@ Brief explanation and why this model was chosen. Hyperparameter tuning.  Brief d
 
 The last model we chose to evaluate was ANN. After some research, we learned that ANN has been able to make accurate predictions for high cost insurance in the past, so we chose it to try to improve our own high cost predictions. As an implementation, we used Scikit-learn's MLPRegressor. Since our dataset is not very large, we used the lbfgs solver for weight optimization, as this solver is known to help smaller datasets converge faster and perform better. We also chose to use one hidden layer since we discovered that only one was necessary for most other problems of similar scale and complexity. To optimize the remaining parameters, we again made use of RandomizedSearch with 300 iterations. These parameters included the maximum number of iterations, size of our hidden layer, activation function, and alpha value.
 
-The ranges for each of these parameters were set as follows:
+The RandomizedSearch ranges for each of these parameters were set as follows:
 - Maximum iterations: 500 - 100 (increments of 100)
   - Values in this range allowed the model to converge most of the time
 - Size of hidden layer: 2 - 7 (increments of 1)
@@ -120,7 +120,19 @@ The ranges for each of these parameters were set as follows:
 - Activation function: tanh or relu
 - Alpha: 0.0001 - 0.0009 (increments of 0.0001)
 
-### Results
+#### All Cost Evaluation
+
+<img width="800" alt="Screen Shot 2020-12-07 at 5 21 19 AM" src="https://user-images.githubusercontent.com/46691358/101339272-2c7d2100-384c-11eb-8701-775d1c5f37e4.png">
+
+#### High Cost Evaluation
+
+<img width="800" alt="Screen Shot 2020-12-07 at 5 21 34 AM" src="https://user-images.githubusercontent.com/46691358/101339322-41f24b00-384c-11eb-9a39-008b97159d96.png">
+
+#### Low Cost Evaluation
+
+<img width="800" alt="Screen Shot 2020-12-07 at 5 21 50 AM" src="https://user-images.githubusercontent.com/46691358/101339357-50406700-384c-11eb-927c-4f1145258799.png">
+
+### Supervised Results
 
 Metric overview and predictive ability of best models for all, high, and low cost data.
 
