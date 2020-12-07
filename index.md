@@ -1,15 +1,22 @@
 <img src="https://user-images.githubusercontent.com/41976165/94980506-6d795200-04f8-11eb-885b-65e707be2036.png" alt="drawing" width="400"/>
 
-## Introduction/Background
+## Overview
 
 The United States has seen an unsustainable increase in the cost of health care in recent
-decades. The accessibility and affordability of health care has been at the forefront of issues that
-Americans face on a daily basis. High costs often prevent people from seeking
-proper treatment, and medical bills can be a major financial burden on U.S. families,
-especially those that are in lower-income households. Our goal is to offer accurate
-predictions of health insurance costs so that U.S. families are able to choose the right
-insurance and make informed financial decisions. Since our problem involves the prediction
-of a continuous value, we will be utilizing regression methods to solve it.
+decades. Many Americans are now afraid of seeking treatment, and those that do are often
+left with unexpectedly high medical bills that become a major financial burden.
+
+Our goal for this project is to offer quick and accurate predictions of health insurance costs
+for an individual without reliance on his or her previous medical expenses. We hope that these
+predictions will help individuals choose appropriate health insurance plans and make more
+informed financial decisions.
+
+To accomplish this task, we trained multiple regression models with the dataset below and evaluated
+their performance by comparing each R2 Score and MSE. We repeated this process for both high costs only and
+low-to-medium costs only in an attempt to make better predictions for individuals who are likely to belong in
+one of these categories. Through our exploratory data analysis and unsupervised learning, we identified
+the factors that would make an individual more likely to experience high costs, and a dollar amount to split
+the dataset on to distinguish between high and low-to-medium costs.
 
 ### Dataset
 Our [dataset](https://www.kaggle.com/mirichoi0218/insurance) originates from Kaggle and contains a mix of numerical and categorical data. The features include:
