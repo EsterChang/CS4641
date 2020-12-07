@@ -184,15 +184,23 @@ The search space for RandomizedSearch was set as follows after manual tuning and
 
 ### Supervised Results
 
+This section is not done.
+
 #### All Costs
+
+ANN performed the best.
 
 <img width="400" alt="Screen Shot 2020-12-07 at 6 51 07 AM" src="https://user-images.githubusercontent.com/46691358/101347906-c3e87100-3858-11eb-9bb9-e27c5a437a1d.png">
 
 #### High Costs
 
+XGBoost performed the best.
+
 <img width="400" alt="Screen Shot 2020-12-07 at 6 51 29 AM" src="https://user-images.githubusercontent.com/46691358/101347947-d662aa80-3858-11eb-9db6-444d58522035.png">
 
 #### Low Costs
+
+XGBoost performed the best.
 
 <img width="400" alt="Screen Shot 2020-12-07 at 6 51 48 AM" src="https://user-images.githubusercontent.com/46691358/101347988-e7132080-3858-11eb-8b36-91247e438ab8.png">
 
