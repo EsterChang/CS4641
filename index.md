@@ -186,10 +186,9 @@ The search space for RandomizedSearch was set as follows after manual tuning and
 
 We compared the R^2 score and MSE evaluation metrics to determine which supervised learning model best predicted the charges for all cost, high cost, and lost cost. Limitations include the dataset itself. One of the reasons for the lower evaluation metric values for the high cost in comparison to the low cost may be due to this limitation that our dataset had more lower cost data points.
 
-<img width="655" alt="Screen Shot 2020-12-07 at 2 59 49 PM" src="https://user-images.githubusercontent.com/32435018/101399564-a2f63f00-389d-11eb-9bb4-b89d3b82d8c1.png">
-<img width="490" alt="Screen Shot 2020-12-07 at 3 01 07 PM" src="https://user-images.githubusercontent.com/32435018/101399593-aee20100-389d-11eb-8e37-ad8b4ebeeccc.png">
-<img width="655" alt="Screen Shot 2020-12-07 at 3 00 53 PM" src="https://user-images.githubusercontent.com/32435018/101399631-bd301d00-389d-11eb-858c-495479a43077.png">
-<img width="483" alt="Screen Shot 2020-12-07 at 3 01 17 PM" src="https://user-images.githubusercontent.com/32435018/101399648-c3be9480-389d-11eb-965e-6a884bbec89d.png">
+<img width="1328" alt="Screen Shot 2020-12-07 at 3 12 20 PM" src="https://user-images.githubusercontent.com/32435018/101400482-fc12a280-389e-11eb-99b0-3fbfe90abd81.png">
+
+<img width="1334" alt="Screen Shot 2020-12-07 at 3 14 31 PM" src="https://user-images.githubusercontent.com/32435018/101400492-ff0d9300-389e-11eb-8159-87266b0481cd.png">
 
 After comparing the evaluation metrics on all models and datasets in the above figures, we discovered that ANN performed the best on the combined dataset (R^2 score = 0.857, MSE = 0.164), and XGBoost performed best on both the high-cost (R^2 score = 0.848, MSE = 0.129) and the low-cost (R^2 score = 0.894, MSE = 0.113) datasets.
 
