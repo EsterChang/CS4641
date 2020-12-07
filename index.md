@@ -71,17 +71,16 @@ Despite already having a low number of features, we decided to use PCA to see if
 
 ### Clustering
 #### KMeans
-We decided to use KMeans as our primary clustering method. After scaling our data, we used the elbow method and silhouette coefficient to determine the optimal k to use when clustering. While we were unable to find an exact optimal k, we found that 15 allowed us to extract meaningful information from our data and achieve a silhouette score of 0.52. Also, after tuning the random_state parameter on sklearn's KMeans implementation, we found that a random_state of 20 achieved the best results for our data.
 
-<img width="300" alt="kmeans-elbow" src="https://user-images.githubusercontent.com/46691358/98430674-3ceb8180-207d-11eb-9277-53b621d6c4ce.png">
+The first clustering method we utilized was KMeans. Since this method relies on euclidean distance to create clusters, we scaled all features to the range (0, 1) so that clustering was not dominated by our larger features. After running KMeans on our scaled features, it appeared difficult to find meaningful clusters.  However, by using the elbow method and silhouette coefficients, we decided that we would be able to gain valuable information from 15 clusters.
 
-<img width="300" alt="kmeans-sil" src="https://user-images.githubusercontent.com/46691358/98430682-496fda00-207d-11eb-8e8a-384eaa24f6ba.png">
+<img width="400" alt="kmeans-elbow" src="https://user-images.githubusercontent.com/46691358/98430674-3ceb8180-207d-11eb-9277-53b621d6c4ce.png"><img width="400" alt="kmeans-sil" src="https://user-images.githubusercontent.com/46691358/98430682-496fda00-207d-11eb-8e8a-384eaa24f6ba.png">
 
 #### KPrototype
 
-Another method that we attempted to use was KPrototype clustering. Since we have a mix of numerical and categorical data, many traditional clustering algorithms are difficult to apply to our data.  In KPrototype clustering, the dissimiliarity between features is determined by comparing numerical and categorical data differently.  After specifying which features are categorical, the algorithm will cluster the data using, for example, euclidean distance for numerical features, and hamming distance for categorical features. By using this method, we were able to achieve slighly improved distortion values, but ultimately we found our KMeans clustering to be more useful for understanding our data.
+Another method that we attempted to use was KPrototype clustering. Since we have a mix of numerical and categorical data, many traditional clustering algorithms are difficult to apply to our data.  In KPrototype clustering, similiarity is determined by comparing numerical and categorical data differently.  After specifying which features are categorical, the algorithm will cluster the data using, for example, euclidean distance for numerical features and hamming distance for categorical features. By using this method we were able to achieve slighly improved distortion values, but ultimately we found our KMeans clustering to be more useful for understanding our data and accomplishing our task.
 
-<img width="300" alt="kproto-elbow" src="https://user-images.githubusercontent.com/46691358/98430691-58568c80-207d-11eb-9882-3af78e71128d.png">
+<img width="400" alt="kproto-elbow" src="https://user-images.githubusercontent.com/46691358/98430691-58568c80-207d-11eb-9882-3af78e71128d.png">
 
 #### Cluster Analysis
 
