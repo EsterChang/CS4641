@@ -96,7 +96,19 @@ After creating our high and low-to-medium cost datasets based on our $15000 thre
 
 ### Linear Regression
 
-Linear Regression is among the most common approaches we have seen others use to predict insurance costs. Since this method is so common, we decided to use it as a starting point to compare to our subsequent models. This method did not require any hyperparameter tuning.
+Linear Regression is among the most common approaches we have seen others use to predict insurance costs. Since this method is so common, we decided to use it as a starting point to compare to our chosen models. This method did not require any hyperparameter tuning and was not one of our primary methods.
+
+#### All Cost Evaluation
+
+<img width="252" alt="Screen Shot 2020-12-07 at 5 33 49 AM" src="https://user-images.githubusercontent.com/46691358/101340528-e032e080-384d-11eb-937d-62d6ad087188.png">
+
+#### High Cost Evaluation
+
+<img width="251" alt="Screen Shot 2020-12-07 at 5 34 02 AM" src="https://user-images.githubusercontent.com/46691358/101340570-ee80fc80-384d-11eb-96ef-730dc2b9a264.png">
+
+#### Low Cost Evaluation
+
+<img width="248" alt="Screen Shot 2020-12-07 at 5 34 14 AM" src="https://user-images.githubusercontent.com/46691358/101340617-fc368200-384d-11eb-84ea-13b50ba81fe1.png">
 
 ### Random Forest
 
