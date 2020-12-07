@@ -19,13 +19,13 @@ the factors that would make an individual more likely to experience high costs, 
 the dataset on to distinguish between high and low-to-medium costs.
 
 ### Dataset
-Our [dataset](https://www.kaggle.com/mirichoi0218/insurance) originates from Kaggle and contains a mix of numerical and categorical data. The features include:
+Our [dataset](https://www.kaggle.com/mirichoi0218/insurance) is from Kaggle and contains a mix of numerical and categorical data. The features include:
 - Age: integer
 - Sex: male or female
 - BMI: decimal
 - Number of children: integer
 - Smoker: yes or no
-- Region in the US: southeast, southwest, northeast, or northwest
+- Region (US): southeast, southwest, northeast, or northwest
 - Charges: decimal (ground truth)
 
 ## Data Cleaning
