@@ -30,12 +30,12 @@ Our [dataset](https://www.kaggle.com/mirichoi0218/insurance) is from Kaggle and 
 
 ## Data Cleaning
 
-Before working with our dataset, we wanted to ensure that it was thoroughly cleaned and usable so that it would not affect the results of our unsupervised or supervised processes.  The steps we took to clean our data were:
+Before working with our dataset, we wanted to ensure that it was thoroughly cleaned and usable so that it would not affect the results of our unsupervised or supervised learning.  The steps we took to clean our data were:
 - Removing rows with missing values
 - Removing duplicate rows
-- Removing rows with bad values (ex: cost less than zero or smoker value not yes or no)
+- Removing rows with bad values (ex: charges less than zero)
 
-In addition to these actions, we also performed a one-hot encoding on the data, converting features such as smoker from "yes" and "no" to 1 and 0.  One of our features, region, was encoded in two different ways for use in different parts of our project.  First, each of our four regions were encoded as 0, 1, 2, 3, and this encoding was used for our data exploration, such as in the correlation matrix.  However, this encoding would present a problem in our unsupervised learning, since when measuring the euclidean distance, the regions encoded as 0 and 3 would be seen as further apart than 0 and 1, even though there is no true meaning for this increased distance between the regions.  Therefore, our second encoding consisted of splitting region into four separate features, one for each region, so that no pair of regions would be seen as further apart than another.
+In addition to these steps, we also performed a one-hot encoding on the data, converting features such as smoker from "yes" and "no" to 1 and 0.  One of our features, region, was encoded in two different ways for use in different parts of our project.  First, our four regions were encoded as 0, 1, 2, and 3 for use in data exploration.  However, this encoding would become a problem in our unsupervised learning, since when measuring euclidean distance, the regions encoded as 0 and 3 would be seen as further apart than 0 and 1, even though there is no true meaning for this larger difference between the regions.  Therefore, our second encoding had region split into four separate features, one for each region, so that no pair of regions would be seen as further apart than another.
 
 ## Data Exploration
 
