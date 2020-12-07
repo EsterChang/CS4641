@@ -212,7 +212,7 @@ XGBoost performed the best.
 
 ## Conclusion
 
-This section is not finished.
+We set out to predict health insurance costs for an individual in hopes that patients can make more informed financial and life decisions. We identified two larger groups within our 15 clusters that enabled us to split our data in high cost and low-to-medium cost, using our unsupervised results to try and improve prediction accuracy for our supervised learning. Through our data exploration and KMeans clustering, we found that smoking was by far the most important feature affecting charges. Using different supervised learning models, we were able to predict health insurance cost. We are pleased with the results from our supervised learning models since our best R^2 scores were relatively high, close to 1. Likewise, the best MSE scores were relatively low, since they were close to 0. In the future, we would like to use a dataset with more high cost data points to see how that might affect the evaluation metrics. For future work, we would want to examine and predict insurance cost changing over a period of time and the effect the pandemic has had on insurance cost. 
 
 ## References
 Bertsimas, D., Bjarnadóttir, M. V., Kane, M. A., Kryder, J. C., Pandey, R., Vempala, S., &amp; Wang, G. (2008). Algorithmic Prediction of Health-Care Costs. Operations Research, 56(6), 1382-1392. doi:10.1287/opre.1080.0619
