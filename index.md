@@ -96,19 +96,12 @@ We used our unsupervised results to determine the threshold to split high cost v
 
 ### Linear Regression
 
-Linear Regression is among the most common approaches we have seen others use to predict insurance costs. Since this method is so common, we decided to use it as a starting point to compare to our chosen models. This method did not require any hyperparameter tuning and was not one of our primary methods.
+Linear Regression is among the most common approaches we have seen others use to predict insurance costs. Since this method is so common, we decided to use it as a starting point to compare to our chosen models. This method did not require any hyperparameter tuning and was not one of our primary methods. The following graphs show the R^2 scores and MSE scores for each dataset.
 
-#### All Cost Evaluation
+<img width="400" alt="r^2 linear regression" src="https://user-images.githubusercontent.com/41976165/101408413-5e24d500-38aa-11eb-890e-e3b957676103.PNG">
 
-<img width="252" alt="Screen Shot 2020-12-07 at 5 33 49 AM" src="https://user-images.githubusercontent.com/46691358/101340528-e032e080-384d-11eb-937d-62d6ad087188.png">
+<img width="400" alt="MSE linear regression" src="https://user-images.githubusercontent.com/41976165/101408693-c5db2000-38aa-11eb-8b72-3ceaefbf0eaa.PNG">
 
-#### High Cost Evaluation
-
-<img width="251" alt="Screen Shot 2020-12-07 at 5 34 02 AM" src="https://user-images.githubusercontent.com/46691358/101340570-ee80fc80-384d-11eb-96ef-730dc2b9a264.png">
-
-#### Low Cost Evaluation
-
-<img width="248" alt="Screen Shot 2020-12-07 at 5 34 14 AM" src="https://user-images.githubusercontent.com/46691358/101340617-fc368200-384d-11eb-84ea-13b50ba81fe1.png">
 
 ### Random Forest
 
@@ -134,6 +127,12 @@ The search space for RandomizedSearch was set as follows after manual tuning and
 
 <img width="1005" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/46691358/101346783-132da200-3857-11eb-9d87-00a2b980f6af.png">
 
+#### R^2 Results
+<img width="400" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/41976165/101408829-fa4edc00-38aa-11eb-8e4f-a5d1489aed14.PNG">
+
+#### MSE Results
+<img width="400" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/41976165/101408834-fc189f80-38aa-11eb-8807-605a63f3dc06.PNG">
+
 ### XGBoost
 
 The next model we chose to evaluate was XGBoost. After conducting our research, we learned that XGBoost has been able to make accurate predictions for low-to-medium cost insurance in the past, so we chose it to try to improve our own low-to-medium cost predictions. As an implementation, we used XGBRegressor from the xgboost library. For the learning objective, we found that reg:squarederror produced the best results, so we decided to keep this objective constant while tuning other parameters with RandomizedSearch. These parameters included the number of gradient boosted trees, max tree depth, learning rate, gamma, subsample ratio for each tree, and column ratio for each tree.
@@ -158,6 +157,12 @@ The search space for RandomizedSearch was set as follows after manual tuning and
 
 <img width="1053" alt="Screen Shot 2020-12-07 at 6 02 43 AM" src="https://user-images.githubusercontent.com/46691358/101343412-f8a4fa00-3851-11eb-9167-8114edc2bd5a.png">
 
+#### R^2 Results
+<img width="400" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/41976165/101409014-3b46f080-38ab-11eb-9646-f65eea1b9585.PNG">
+
+#### MSE Results
+<img width="400" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/41976165/101409016-3bdf8700-38ab-11eb-897e-ab64a2aa9e5e.PNG">
+
 ### Artificial Neural Network
 
 The last model we chose to evaluate was ANN. After conducting our research, we learned that ANN has been able to make accurate predictions for high cost insurance in the past, so we chose it to try to improve our own high cost predictions. As an implementation, we used Scikit-learn's MLPRegressor. Since our dataset is not very large, we used the lbfgs solver for weight optimization, as this solver is known to help smaller datasets converge faster and perform better. We also chose to use one hidden layer since we discovered that only one was necessary for most other problems of similar scale and complexity. To optimize the remaining parameters, we again made use of RandomizedSearch. These parameters included the maximum number of iterations, size of our hidden layer, activation function, and alpha value.
@@ -181,6 +186,12 @@ The search space for RandomizedSearch was set as follows after manual tuning and
 #### Low Cost Evaluation
 
 <img width="800" alt="Screen Shot 2020-12-07 at 5 21 50 AM" src="https://user-images.githubusercontent.com/46691358/101339357-50406700-384c-11eb-927c-4f1145258799.png">
+
+#### R^2 Results
+<img width="400" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/41976165/101409054-4ef25700-38ab-11eb-9e4a-f878fc4a8bce.PNG">
+
+#### MSE Results
+<img width="400" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/41976165/101409056-4f8aed80-38ab-11eb-8d95-d9bddaea4e4e.PNG">
 
 ### Supervised Results
 
