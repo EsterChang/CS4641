@@ -112,25 +112,43 @@ Linear Regression is among the most common approaches we have seen others use to
 
 ### Random Forest
 
-
-
 Brief explanation of model and why this model was chosen. Hyperparameter tuning.  Brief discussion of results and why they were what they were.
 
 ### XGBoost
 
-Brief explanation and why this model was chosen. Hyperparameter tuning.  Brief discussion of results and why they were what they were.
+The next model we chose to evaluate was XGBoost. After conducting our research, we learned that XGBoost has been able to make accurate predictions for low-to-medium cost insurance in the past, so we chose it to try to improve our own low-to-medium cost predictions. As an implementation, we used XGBRegressor from the xgboost library. For the learning objective, we found that reg:squarederror produced the best results, so we decided to keep this objective constant while tuning other parameters with 300 iterations of RandomizedSearch. These parameters included the number of gradient boosted trees, max tree depth, learning rate, gamma, subsample ratio for each tree, and column ratio for each tree.
+
+The search space for RandomizedSearch was set as follows:
+- Number of gradient boosted trees: 100 - 200 (inc of 1)
+- Max tree depth: 2 - 10 (inc of 1)
+- Learning rate: 0.01 - 0.2 (inc of 0.01)
+- Gamma: 0.01 - 0.1 (inc of 0.01)
+- Subsample ratio for each tree: 0.5 - 1 (inc of 0.1)
+- Column ratio for each tree: 0.5 - 1 (inc of 0.1)
+
+#### All Cost Evaluation
+
+<img width="1072" alt="Screen Shot 2020-12-07 at 6 02 07 AM" src="https://user-images.githubusercontent.com/46691358/101343344-df03b280-3851-11eb-8475-6b38d09fd4a4.png">
+
+#### High Cost Evaluation
+
+<img width="1071" alt="Screen Shot 2020-12-07 at 6 02 26 AM" src="https://user-images.githubusercontent.com/46691358/101343381-ed51ce80-3851-11eb-8bda-da338914d583.png">
+
+#### Low Cost Evaluation
+
+<img width="1053" alt="Screen Shot 2020-12-07 at 6 02 43 AM" src="https://user-images.githubusercontent.com/46691358/101343412-f8a4fa00-3851-11eb-9167-8114edc2bd5a.png">
 
 ### Artificial Neural Network
 
-The last model we chose to evaluate was ANN. After some research, we learned that ANN has been able to make accurate predictions for high cost insurance in the past, so we chose it to try to improve our own high cost predictions. As an implementation, we used Scikit-learn's MLPRegressor. Since our dataset is not very large, we used the lbfgs solver for weight optimization, as this solver is known to help smaller datasets converge faster and perform better. We also chose to use one hidden layer since we discovered that only one was necessary for most other problems of similar scale and complexity. To optimize the remaining parameters, we again made use of RandomizedSearch with 300 iterations. These parameters included the maximum number of iterations, size of our hidden layer, activation function, and alpha value.
+The last model we chose to evaluate was ANN. After conducting our research, we learned that ANN has been able to make accurate predictions for high cost insurance in the past, so we chose it to try to improve our own high cost predictions. As an implementation, we used Scikit-learn's MLPRegressor. Since our dataset is not very large, we used the lbfgs solver for weight optimization, as this solver is known to help smaller datasets converge faster and perform better. We also chose to use one hidden layer since we discovered that only one was necessary for most other problems of similar scale and complexity. To optimize the remaining parameters, we again made use of RandomizedSearch with 300 iterations. These parameters included the maximum number of iterations, size of our hidden layer, activation function, and alpha value.
 
-The RandomizedSearch ranges for each of these parameters were set as follows:
-- Maximum iterations: 500 - 100 (increments of 100)
+The search space for RandomizedSearch was set as follows:
+- Maximum iterations: 500 - 100 (inc of 100)
   - Values in this range allowed the model to converge most of the time
-- Size of hidden layer: 2 - 7 (increments of 1)
+- Size of hidden layer: 2 - 7 (inc of 1)
   - Size of the hidden layer should be between the size of the input and output layer
 - Activation function: tanh or relu
-- Alpha: 0.0001 - 0.0009 (increments of 0.0001)
+- Alpha: 0.0001 - 0.0009 (inc of 0.0001)
 
 #### All Cost Evaluation
 
