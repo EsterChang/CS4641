@@ -138,19 +138,9 @@ Metric overview and predictive ability of best models for all, high, and low cos
 
 ------ Remove the stuff below once finished with the stuff above ------
 
-## Results
-### Expected
-For our unsupervised portion, we expect to gain a deeper understanding of the importance of each feature in our dataset. For touchpoint 2, we are trying to achieve a silhouette coefficient >0.5 using K-means. For the supervised portion, we expect to see an improvement in performance over Linear Regression when utilizing Random Forest, XGBoost, and ANN methods. By touchpoint 3, we are aiming to obtain a lower MSE value from Random Forest, XGBoost, or ANN than Linear Regression on either the combined or separated dataset. Overall, we want to be able to predict the insurance cost of anyone, given their specific features, with an accuracy >90%.
+## Conclusion
 
-### Current
-Before starting our unsupervised portion, we expected to gain further insight into our data and achieve a silhouette coefficent >0.5 for K-means. We achieved this goal, and also went further by using PCA and KPrototype. This information will be helpful for us when deciding how to split our data into high cost and low-to-medium cost, and then seeing whether supervised learning can be improved. It is clear that smokers suffer signficant charges, and other factors such as BMI, age, and possiblity sex can also have an impact.
-
-## Next Steps
-For the supervised learning portion of our project, we will be attempting to obtain better performance than Linear Regression when predicting insurance costs since it is the most common approach.  The models we have chosen to utilize are Random Forest, XGBoost, and ANN.  While we believe that our chosen models will lead to better performance than Linear Regression for the total dataset, we will also be training our models with low-to-medium and high cost data separately.  The reason for this is we would like to see if we are able to make better predictions for specifically low-to-medium cost and specifically high cost insurance.  To compare the performance of our models, we will be using the mean squared error (MSE) metric to evaluate each individually.
-
-## Discussion
-
-The best outcome would be being able to predict anyone's health insurance given specific features with high accuracy. This outcome would mean that patients could choose the correct insurance for them, and it would allow insurance companies to better allocate their resources and plan their business model. Predicting insurance cost with high accuracy would also allow the government and its citizens to decide on correct policies to help reduce cost and increase coverage. A potential next step would be predicting an individual's insurance cost over time.
+Wrap it up
 
 ## References
 Bertsimas, D., Bjarnadóttir, M. V., Kane, M. A., Kryder, J. C., Pandey, R., Vempala, S., &amp; Wang, G. (2008). Algorithmic Prediction of Health-Care Costs. Operations Research, 56(6), 1382-1392. doi:10.1287/opre.1080.0619
