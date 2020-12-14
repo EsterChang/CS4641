@@ -13,10 +13,10 @@ informed financial decisions.
 
 To accomplish this task, we trained multiple regression models with the dataset below and evaluated
 their performance by comparing each R2 Score and MSE. We repeated this process for both high costs only and
-low-to-medium costs only in an attempt to make better predictions for individuals who are highly likely to belong in
+low costs only in an attempt to make better predictions for individuals who are highly likely to belong in
 one of these categories. Through our exploratory data analysis and unsupervised learning, we identified
 the factors that would make an individual more likely to experience high costs, and a dollar amount to split
-the dataset on to distinguish between high and low-to-medium costs.
+the dataset on to distinguish between high and low costs.
 
 ### Dataset
 Our [dataset](https://www.kaggle.com/mirichoi0218/insurance) is from Kaggle and contains a mix of numerical and categorical data. The features include:
@@ -59,7 +59,7 @@ The last relationship we chose to look at was between age and charges. As expect
 
 <img width="400" alt="age" src="https://user-images.githubusercontent.com/46691358/98428500-cd22ca00-206f-11eb-8a4f-74607d822914.png">
 
-The results of this data exploration lead us to believe that smoking is by far the most important feature in determing an individual's risk for high insurance costs, with age and BMI still playing a modest role. Since smoking has such strong influence, we believe the best split between high and low-to-medium cost should be defined by the separation between charges for smokers and non-smokers. We will confirm and expand upon this claim in our clustering results section.
+The results of this data exploration lead us to believe that smoking is by far the most important feature in determing an individual's risk for high insurance costs, with age and BMI still playing a modest role. Since smoking has such strong influence, we believe the best split between high and low cost should be defined by the separation between charges for smokers and non-smokers. We will confirm and expand upon this claim in our unsupervised results section.
 
 ## Unsupervised Learning
 
@@ -84,26 +84,21 @@ Another method that we attempted to use was KPrototype clustering. Since we have
 
 ### Unsupervised Results
 
-As stated previously, even though it was difficult to find meaningful clusters, we were able to gain valuable information from using KMeans with 15 clusters that confirmed our earlier data exploration findings. When observing the average and standard deviation of the charges in each cluster, it is clear that some clusters primarily have much lower charges than others.  To investigate this phenomenon, we looked at the average and standard deviation of each feature for each cluster. Only one feature offered a clear and meaningful explanation for the difference of charges between clusters: smoking. Every cluster that had signficantly higher average charges consisted of only smokers. This evidence confirms the earlier claim made in the data exploration section that smoking is by far the most important feature in determing an individual's risk for high insurance costs. These results coupled with our earlier findings from data exploration lead us to believe that $15000 is the optimal split between high and low-to-medium cost insurance, as this represents a split between the charges for smokers and non-smokers.
+As stated previously, even though it was difficult to find meaningful clusters, we were able to gain valuable information from using KMeans with 15 clusters that confirmed our earlier data exploration findings. When observing the average and standard deviation of the charges in each cluster, it is clear that some clusters primarily have much lower charges than others.  To investigate this phenomenon, we looked at the average and standard deviation of each feature for each cluster. Only one feature offered a clear and meaningful explanation for the difference of charges between clusters: smoking. Every cluster that had signficantly higher average charges consisted of only smokers. This evidence confirms the earlier claim made in the data exploration section that smoking is by far the most important feature in determing an individual's risk for high insurance costs. These results coupled with our earlier findings from data exploration lead us to believe that $15000 is the optimal split between high and low cost insurance, as this represents a split between the charges for smokers and non-smokers.
 
-<img width="400" alt="Screen Shot 2020-12-07 at 2 59 04 AM" src="https://user-images.githubusercontent.com/46691358/101324475-52002f80-3838-11eb-80ed-b18f594e1c1b.png"><img width="400" alt="Screen Shot 2020-12-07 at 2 59 39 AM" src="https://user-images.githubusercontent.com/46691358/101324539-680df000-3838-11eb-95c4-a54e66b5d7fc.png">
+<img width="400" alt="cluster-charges" src="https://user-images.githubusercontent.com/46691358/101324475-52002f80-3838-11eb-80ed-b18f594e1c1b.png"><img width="400" alt="cluster-smokers" src="https://user-images.githubusercontent.com/46691358/101324539-680df000-3838-11eb-95c4-a54e66b5d7fc.png">
 
 ## Supervised Learning
 
-To make the best possible predictions, we compared the performance of four different regression models on combined, high, and low-to-medium cost data individually. By also training each of our models with high and low-to-medium cost data only, we hoped to achieve more accurate predictions for individuals highly likely to have low-to-medium or high costs, which we now know is significantly influenced by smoking and potentially a higher BMI.
+To make the best possible predictions, we compared the performance of four different regression models on combined, high, and low cost data individually. By also training each of our models with high and low cost data only, we hoped to achieve more accurate predictions for individuals highly likely to have low or high costs, which we now know is significantly influenced by smoking and potentially a higher BMI.
 
-We used our unsupervised results to determine the threshold to split high cost versus low-medium cost for our supervised learning. After creating our high and low-to-medium cost datasets based on our $15000 threshold, we created a training and testing set for each, as well as for the combined dataset.  Each training set consisted of 80% of the data in a set, while each testing set consisted of the remaining 20%. All data in both training and testing sets was scaled so that evaluation metrics were interpretable, and the performance of scaled sets was compared against unscaled sets to ensure that performance was unaffected.
+We used our unsupervised results to determine the threshold to split high cost versus low cost for our supervised learning. After creating our high and low cost datasets based on our $15000 threshold, we created a training and testing set for each, as well as for the combined dataset.  Each training set consisted of 80% of the data in a set, while each testing set consisted of the remaining 20%. All data in both training and testing sets was scaled so that evaluation metrics were interpretable, and the performance of scaled sets was compared against unscaled sets to ensure that performance was unaffected.
 
 ### Linear Regression
 
 Linear Regression is among the most common approaches we have seen others use to predict insurance costs. Since this method is so common, we decided to use it as a starting point to compare to our chosen models. This method did not require any hyperparameter tuning and was not one of our primary methods.
 
-#### R2 Results
-<img width="400" alt="r^2 linear regression" src="https://user-images.githubusercontent.com/41976165/101408413-5e24d500-38aa-11eb-890e-e3b957676103.PNG">
-
-#### MSE Results
-<img width="400" alt="MSE linear regression" src="https://user-images.githubusercontent.com/41976165/101408693-c5db2000-38aa-11eb-8b72-3ceaefbf0eaa.PNG">
-
+<img width="400" alt="linear-r2" src="https://user-images.githubusercontent.com/46691358/102026544-77c39200-3d6c-11eb-828d-e21bb0db4a09.png"><img width="400" alt="linear-mse" src="https://user-images.githubusercontent.com/46691358/102026562-9164d980-3d6c-11eb-98d1-1bfe58bdbaad.png">
 
 ### Random Forest
 
@@ -119,25 +114,21 @@ The search space for RandomizedSearch was set as follows after manual tuning and
 
 #### All Cost Evaluation
 
-<img width="1019" alt="Screen Shot 2020-12-07 at 6 38 39 AM" src="https://user-images.githubusercontent.com/46691358/101346722-fb561e00-3856-11eb-9d65-667d9bfac158.png">
+<img width="1000" alt="forest-all-cost" src="https://user-images.githubusercontent.com/46691358/101346722-fb561e00-3856-11eb-9d65-667d9bfac158.png">
 
 #### High Cost Evaluation
 
-<img width="1021" alt="Screen Shot 2020-12-07 at 6 38 53 AM" src="https://user-images.githubusercontent.com/46691358/101346752-05781c80-3857-11eb-9e09-413b8a281a88.png">
+<img width="1000" alt="forest-high-cost" src="https://user-images.githubusercontent.com/46691358/101346752-05781c80-3857-11eb-9e09-413b8a281a88.png">
 
 #### Low Cost Evaluation
 
-<img width="1005" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/46691358/101346783-132da200-3857-11eb-9d87-00a2b980f6af.png">
+<img width="1000" alt="forest-low-cost" src="https://user-images.githubusercontent.com/46691358/101346783-132da200-3857-11eb-9d87-00a2b980f6af.png">
 
-#### R2 Results
-<img width="400" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/41976165/101408829-fa4edc00-38aa-11eb-8e4f-a5d1489aed14.PNG">
-
-#### MSE Results
-<img width="400" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/41976165/101408834-fc189f80-38aa-11eb-8807-605a63f3dc06.PNG">
+<img width="400" alt="forest-r2" src="https://user-images.githubusercontent.com/46691358/102026593-b6f1e300-3d6c-11eb-9342-802312beaf19.png"><img width="400" alt="forest-mse" src="https://user-images.githubusercontent.com/46691358/102026607-c7a25900-3d6c-11eb-8c52-1fd36ee82583.png">
 
 ### XGBoost
 
-The next model we chose to evaluate was XGBoost. After conducting our research, we learned that XGBoost has been able to make accurate predictions for low-to-medium cost insurance in the past, so we chose it to try to improve our own low-to-medium cost predictions. As an implementation, we used XGBRegressor from the xgboost library. For the learning objective, we found that reg:squarederror produced the best results, so we decided to keep this objective constant while tuning other parameters with RandomizedSearch. These parameters included the number of gradient boosted trees, max tree depth, learning rate, gamma, subsample ratio for each tree, and column ratio for each tree.
+The next model we chose to evaluate was XGBoost. After conducting our research, we learned that XGBoost has been able to make accurate predictions for low cost insurance in the past, so we chose it to try to improve our own low cost predictions. As an implementation, we used XGBRegressor from the xgboost library. For the learning objective, we found that reg:squarederror produced the best results, so we decided to keep this objective constant while tuning other parameters with RandomizedSearch. These parameters included the number of gradient boosted trees, max tree depth, learning rate, gamma, subsample ratio for each tree, and column ratio for each tree.
 
 The search space for RandomizedSearch was set as follows after manual tuning and run for 300 iterations:
 - Number of gradient boosted trees: 100 - 200 (inc of 1)
@@ -149,28 +140,24 @@ The search space for RandomizedSearch was set as follows after manual tuning and
 
 #### All Cost Evaluation
 
-<img width="1072" alt="Screen Shot 2020-12-07 at 6 02 07 AM" src="https://user-images.githubusercontent.com/46691358/101343344-df03b280-3851-11eb-8475-6b38d09fd4a4.png">
+<img width="1000" alt="boost-all-cost" src="https://user-images.githubusercontent.com/46691358/101343344-df03b280-3851-11eb-8475-6b38d09fd4a4.png">
 
 #### High Cost Evaluation
 
-<img width="1071" alt="Screen Shot 2020-12-07 at 6 02 26 AM" src="https://user-images.githubusercontent.com/46691358/101343381-ed51ce80-3851-11eb-8bda-da338914d583.png">
+<img width="1000" alt="boost-high-cost" src="https://user-images.githubusercontent.com/46691358/101343381-ed51ce80-3851-11eb-8bda-da338914d583.png">
 
 #### Low Cost Evaluation
 
-<img width="1053" alt="Screen Shot 2020-12-07 at 6 02 43 AM" src="https://user-images.githubusercontent.com/46691358/101343412-f8a4fa00-3851-11eb-9167-8114edc2bd5a.png">
+<img width="1000" alt="boost-low-cost" src="https://user-images.githubusercontent.com/46691358/101343412-f8a4fa00-3851-11eb-9167-8114edc2bd5a.png">
 
-#### R2 Results
-<img width="400" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/41976165/101409014-3b46f080-38ab-11eb-9646-f65eea1b9585.PNG">
-
-#### MSE Results
-<img width="400" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/41976165/101409016-3bdf8700-38ab-11eb-897e-ab64a2aa9e5e.PNG">
+<img width="400" alt="boost-r2" src="https://user-images.githubusercontent.com/46691358/102026617-db4dbf80-3d6c-11eb-86f2-491a96833c33.png"><img width="400" alt="boost-mse" src="https://user-images.githubusercontent.com/46691358/102026623-e99bdb80-3d6c-11eb-8545-886b78fb8869.png">
 
 ### Artificial Neural Network
 
 The last model we chose to evaluate was ANN. After conducting our research, we learned that ANN has been able to make accurate predictions for high cost insurance in the past, so we chose it to try to improve our own high cost predictions. As an implementation, we used Scikit-learn's MLPRegressor. Since our dataset is not very large, we used the lbfgs solver for weight optimization, as this solver is known to help smaller datasets converge faster and perform better. We also chose to use one hidden layer since we discovered that only one was necessary for most other problems of similar scale and complexity. To optimize the remaining parameters, we again made use of RandomizedSearch. These parameters included the maximum number of iterations, size of our hidden layer, activation function, and alpha value.
 
 The search space for RandomizedSearch was set as follows after manual tuning and run for 300 iterations:
-- Maximum iterations: 500 - 100 (inc of 100)
+- Maximum iterations: 500 - 1000 (inc of 100)
   - Values in this range allowed the model to converge most of the time
 - Size of hidden layer: 2 - 7 (inc of 1)
   - Size of the hidden layer should be between the size of the input and output layer
@@ -179,59 +166,55 @@ The search space for RandomizedSearch was set as follows after manual tuning and
 
 #### All Cost Evaluation
 
-<img width="800" alt="Screen Shot 2020-12-07 at 5 21 19 AM" src="https://user-images.githubusercontent.com/46691358/101339272-2c7d2100-384c-11eb-8701-775d1c5f37e4.png">
+<img width="800" alt="ann-all-cost" src="https://user-images.githubusercontent.com/46691358/101339272-2c7d2100-384c-11eb-8701-775d1c5f37e4.png">
 
 #### High Cost Evaluation
 
-<img width="800" alt="Screen Shot 2020-12-07 at 5 21 34 AM" src="https://user-images.githubusercontent.com/46691358/101339322-41f24b00-384c-11eb-9a39-008b97159d96.png">
+<img width="800" alt="ann-high-cost" src="https://user-images.githubusercontent.com/46691358/101339322-41f24b00-384c-11eb-9a39-008b97159d96.png">
 
 #### Low Cost Evaluation
 
-<img width="800" alt="Screen Shot 2020-12-07 at 5 21 50 AM" src="https://user-images.githubusercontent.com/46691358/101339357-50406700-384c-11eb-927c-4f1145258799.png">
+<img width="800" alt="ann-low-cost" src="https://user-images.githubusercontent.com/46691358/101339357-50406700-384c-11eb-927c-4f1145258799.png">
 
-#### R2 Results
-<img width="400" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/41976165/101409054-4ef25700-38ab-11eb-9e4a-f878fc4a8bce.PNG">
-
-#### MSE Results
-<img width="400" alt="Screen Shot 2020-12-07 at 6 39 09 AM" src="https://user-images.githubusercontent.com/41976165/101409056-4f8aed80-38ab-11eb-8d95-d9bddaea4e4e.PNG">
+<img width="400" alt="ann-r2" src="https://user-images.githubusercontent.com/46691358/102026637-033d2300-3d6d-11eb-9b5a-f3cee22afa3f.png"><img width="400" alt="ann-mse" src="https://user-images.githubusercontent.com/46691358/102026670-18b24d00-3d6d-11eb-9e99-4badab2d44f1.png">
 
 ### Supervised Results
 
-After training and evaluating our models with different combinations of parameters, we compared the R2 scores and MSE values of each to determine which offered the best predictions for all, high, and low costs.  A common problem we found was a decrease in performance on high cost data only.  This proved to be significant for linear regression and ANN, and noticeable for Random Forest and XGBoost.  We believe that this is caused by the low number of observations in the high cost training set, so there was little we could do to address this issue.  On the other hand, our best results were from low-to-medium cost data only, which demonstrates the value of our decision to split. Below is a summary of our supervised metric evaluation.
+After training and evaluating our models with different combinations of parameters, we compared the R2 scores and MSE values of each to determine which offered the best predictions for all, high, and low costs.  A common problem we found was a decrease in performance on high cost data only.  This proved to be significant for linear regression and ANN, and noticeable for Random Forest and XGBoost.  We believe that this is caused by the low number of observations in the high cost training set, so there was little we could do to address this issue.  On the other hand, our best results were from low cost data only, which demonstrates the value of our decision to split. Below is a summary of our supervised metric evaluation.
 
-#### R2 Results
+#### R2 Score Results
 
-<img width="355" alt="Screen Shot 2020-12-07 at 5 22 49 PM" src="https://user-images.githubusercontent.com/46691358/101412712-0dfd4100-38b1-11eb-9f3f-fc24ff751a0e.png">
+<img width="350" alt="r2-summary" src="https://user-images.githubusercontent.com/46691358/101412712-0dfd4100-38b1-11eb-9f3f-fc24ff751a0e.png">
 
 #### MSE Results
 
-<img width="354" alt="Screen Shot 2020-12-07 at 5 23 00 PM" src="https://user-images.githubusercontent.com/46691358/101412738-18b7d600-38b1-11eb-90b0-ae174b9f9616.png">
+<img width="350" alt="mse-summary" src="https://user-images.githubusercontent.com/46691358/101412738-18b7d600-38b1-11eb-90b0-ae174b9f9616.png">
 
 #### All Costs
 
 For our all costs dataset, we found that ANN had the best performance with XGBoost and Random Forest following closely behind. This was a surprising discovery, since we expected ANN to have the best results for high cost data. However, ANN ended up performing significantly worse on high cost data, and as mentioned previously, we believe that this is because of the lack of observations in the set. With more observations in the training set, we believe that ANN would perform the best on the high cost set, but we are glad this method still proved to be useful. We found that 500 iterations, 4 nodes in our hidden layer, relu activation function, lbfgs solver, and an alpha value of 0.0009 led to the best performance for this model on all costs. The predictive performance of this model is shown below.
 
-<img width="400" alt="Screen Shot 2020-12-07 at 6 51 07 AM" src="https://user-images.githubusercontent.com/46691358/101347906-c3e87100-3858-11eb-9bb9-e27c5a437a1d.png">
+<img width="400" alt="best-all-cost" src="https://user-images.githubusercontent.com/46691358/101347906-c3e87100-3858-11eb-9bb9-e27c5a437a1d.png">
 
 #### High Costs
 
 For our high costs dataset, we found that XGBoost had the best performance with Random Forest following closely behind. We found that a squared error learning objective, 166 trees, max depth of 3, column ratio for each tree of 0.9, subsample ratio for each tree of 1, learning rate of 0.06, and gamma value of 0.1 led to the best performance for this model on high costs. The predictive performance of this model is shown below.
 
-<img width="400" alt="Screen Shot 2020-12-07 at 6 51 29 AM" src="https://user-images.githubusercontent.com/46691358/101347947-d662aa80-3858-11eb-9db6-444d58522035.png">
+<img width="400" alt="best-high-cost" src="https://user-images.githubusercontent.com/46691358/101347947-d662aa80-3858-11eb-9db6-444d58522035.png">
 
 #### Low Costs
 
 For our low costs dataset, we found that XGBoost again had the best performance with ANN following extremely closely behind. We found that a squared error learning objective, 195 trees, max depth of 2, column ratio for each tree of 0.6, subsample ratio for each tree of 1, learning rate of 0.07, and gamma value of 0.01 led to the best performance for this model on low costs. The predictive performance of this model is shown below.
 
-<img width="400" alt="Screen Shot 2020-12-07 at 6 51 48 AM" src="https://user-images.githubusercontent.com/46691358/101347988-e7132080-3858-11eb-8b36-91247e438ab8.png">
+<img width="400" alt="best-low-cost" src="https://user-images.githubusercontent.com/46691358/101347988-e7132080-3858-11eb-8b36-91247e438ab8.png">
 
 ## Conclusion
 
-Our goal for this project was to provide accurate predictions of health insurance costs for an individual so that he or she would be able to choose appropriate health insurance plans and make more informed financial decisions. By conducting an exploratory data analysis and clustering our features, we found that smokers tend to have much higher charges along with some influence from increased BMI, and identified a value of $15000 to split our dataset into high and low-to-medium cost data.  By splitting our dataset, we hoped to provide even more accurate predictions for those highly likely to fall within one of the two categories of insurance costs.  After training and evaluating the performance of our supervised models on all cost data, we were able to achieve a highest R2 score of 0.857 and lowest MSE of 0.164.  By utilizing our low-to-medium cost dataset, we were able to improve predictions for those likely to have low-to-medium costs, with a highest R2 score of 0.894 and lowest MSE of 0.113.  We were not as happy with our results for high cost data only, and we believe that lack of training data in this set was the cause for lower results.  In future work, we would want to gather more training data to see if we could also provide better predictions for those likely to have higher insurance costs.  Overall we are pleased with our predictions, and hope that others continue to work on this rapidly growing issue.
+Our goal for this project was to provide accurate predictions of health insurance costs for an individual so that he or she would be able to choose appropriate health insurance plans and make more informed financial decisions. By conducting an exploratory data analysis and clustering our features, we found that smokers tend to have much higher charges along with some influence from increased BMI, and identified a value of $15000 to split our dataset into high and low cost data.  By splitting our dataset, we hoped to provide even more accurate predictions for those highly likely to fall within one of the two categories of insurance costs.  After training and evaluating the performance of our supervised models on all cost data, we were able to achieve a highest R2 score of 0.857 and lowest MSE of 0.164.  By utilizing our low cost dataset, we were able to improve predictions for those likely to have low costs, with a highest R2 score of 0.894 and lowest MSE of 0.113.  We were not as happy with our results for high cost data only, and we believe that lack of training data in this set was the cause for lower results.  In future work, we would want to gather more training data to see if we could also provide better predictions for those likely to have higher insurance costs.  Overall we are pleased with our predictions, and hope that others continue to work on this rapidly growing issue.
 
 ## References
-Bertsimas, D., Bjarnadóttir, M. V., Kane, M. A., Kryder, J. C., Pandey, R., Vempala, S., &amp; Wang, G. (2008). Algorithmic Prediction of Health-Care Costs. Operations Research, 56(6), 1382-1392. doi:10.1287/opre.1080.0619
+Morid, M., Kawamoto, K., Ault, T., Dorius, J., &amp; Abdelrahman, S. (2018, April 16). Supervised Learning Methods for Predicting Healthcare Costs: Systematic Literature Review and Empirical Evaluation.
 
 Jödicke, A. M., Zellweger, U., Tomka, I. T., Neuer, T., Curkovic, I., Roos, M., . . . Egbring, M. (2019). Prediction of health care expenditure increase: How does pharmacotherapy contribute? BMC Health Services Research, 19(1). doi:10.1186/s12913-019-4616-x
 
-Morid, M., Kawamoto, K., Ault, T., Dorius, J., &amp; Abdelrahman, S. (2018, April 16). Supervised Learning Methods for Predicting Healthcare Costs: Systematic Literature Review and Empirical Evaluation.
+Bertsimas, D., Bjarnadóttir, M. V., Kane, M. A., Kryder, J. C., Pandey, R., Vempala, S., &amp; Wang, G. (2008). Algorithmic Prediction of Health-Care Costs. Operations Research, 56(6), 1382-1392. doi:10.1287/opre.1080.0619
